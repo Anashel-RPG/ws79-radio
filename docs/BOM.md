@@ -14,29 +14,29 @@ are another matter: they are measured in its print files.
 
 | No. | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Part | Qty | What it does | In version 1.0 |
 |---|---|---|---|---|---|
-| **A1** | <img src="images/parts/a01-raspberry-pi-4.jpg" width="96" alt="Raspberry Pi 4 Model B, 1 GB"> | [Raspberry Pi 4 Model B, 1 GB](#a1) | 1 | Runs the radio program, plays the sounds and drives the screens | Wired |
-| **A2** | <img src="images/parts/a02-power-supply.jpg" width="96" alt="USB-C power supply, 5.1 V 3 A"> | [USB-C power supply, 5.1 V 3 A](#a2) | 1 | Powers the whole radio through one cable | Wired |
-| **A3** | <img src="images/parts/a03-microsd-card.jpg" width="96" alt="microSD card, 32 GB"> | [microSD card, 32 GB](#a3) | 1 | Holds Raspberry Pi OS and the radio program | Wired |
-| **A4** | <img src="images/parts/a04-sd-adapter.jpg" width="96" alt="microSD to SD adapter"> | [microSD to SD adapter](#a4) | 1 | Lets a computer's SD slot write the card | Wired |
-| **A5** | <img src="images/parts/a05-bar-display.jpg" width="96" alt="3.7 in bar display, 240 × 960 pixels"> | [3.7 in bar display, 240 × 960 pixels](#a5) | 2 | Shows the frequency, the channel and the spectrum. The two sit end to end behind the window | One wired, one planned |
-| **A6** | <img src="images/parts/a06-qualia-board.jpg" width="96" alt="Qualia ESP32-S3 board for RGB-666 displays"> | [Qualia ESP32-S3 board for RGB-666 displays](#a6) | 2 | Drives one bar display each. The Pi talks to each board over USB | One wired, one planned |
-| **A7** | <img src="images/parts/a07-usb-a-to-c-cable.jpg" width="96" alt="USB-A to USB-C cable, 91 cm"> | [USB-A to USB-C cable, 91 cm](#a7) | 3 | Connects the Pi to each Qualia board, and to the keypad | Two wired, one planned |
-| **A8** | <img src="images/parts/a08-keypad.jpg" width="96" alt="SinLoon keypad, 6 keys and a knob"> | [SinLoon keypad, 6 keys and a knob](#a8) | 1 | The channel keys and the volume knob | Wired |
-| **A9** | <img src="images/parts/a09-vu-meters.jpg" width="96" alt="Pair of VU meters, 0 to 500 µA"> | [Pair of VU meters, 0 to 500 µA](#a9) | 1 pair | The SIGNAL and AUDIO needles | Planned |
-| **A10** | <img src="images/parts/a10-trim-potentiometer.jpg" width="96" alt="10 kΩ trim potentiometer"> | [10 kΩ trim potentiometer](#a10) | 2 | Sets the full scale of each needle | Planned |
-| **A11** | <img src="images/parts/a11-step-up-cable.jpg" width="96" alt="USB 5 V to 12 V step-up cable"> | [USB 5 V to 12 V step-up cable](#a11) | 1 | Turns 5 V into the 12 V that lights the meters | Planned |
-| **A12** | <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="96" alt="USB-A socket on four jumper wires"> | [USB-A socket on four jumper wires](#a12) | 1 | Gives the step-up cable a USB socket on the Pi's header | Planned |
-| **A13** | <img src="images/parts/a13-speaker.jpg" width="96" alt="MonkMakes Amplified Speaker 2"> | [MonkMakes Amplified Speaker 2](#a13) | 1 | The speaker, with its own amplifier | Wired |
-| **A14** | <img src="images/parts/a14-audio-cable.jpg" width="96" alt="3.5 mm audio cable, 30 cm, one end at a right angle"> | [3.5 mm audio cable, 30 cm, one end at a right angle](#a14) | 1 | Takes the sound from the Pi's jack to the speaker | Wired |
-| **A15** | <img src="images/parts/a15-cb-microphone.jpg" width="96" alt="Uniden BC645 CB microphone"> | [Uniden BC645 CB microphone](#a15) | 1 | The hand microphone and its push-to-talk button | Planned |
-| **A16** | <img src="images/parts/a16-microphone-socket.jpg" width="96" alt="4-pin microphone socket for the face"> | [4-pin microphone socket for the face](#a16) | 1 | The socket that the microphone plugs into | Planned |
-| **A17** | <img src="images/parts/a17-usb-sound-adapter.jpg" width="96" alt="USB sound adapter with a microphone input"> | [USB sound adapter with a microphone input](#a17) | 1 | Gives the Pi the microphone input it lacks | Planned |
-| **A18** | <img src="images/parts/a18-trrs-plug.jpg" width="96" alt="3.5 mm TRRS plug with screw terminals"> | [3.5 mm TRRS plug with screw terminals](#a18) | 1 | Joins the microphone's wires to the sound adapter | Planned |
-| **A19** | <img src="images/parts/a19-jumper-wires.jpg" width="96" alt="Female-to-female jumper wires, 30 cm"> | [Female-to-female jumper wires, 30 cm](#a19) | 1 strip of 20 | Join the Pi's pins to the speaker, the needles and the push-to-talk button | Wired |
-| **A20** | <img src="images/parts/a20-usb-c-panel-socket.jpg" width="96" alt="USB-C panel socket on a 30 cm cable"> | [USB-C panel socket on a 30 cm cable](#a20) | 1 | The power socket on the back of the case | Planned |
-| **A21** | <img src="images/parts/a21-switch-cable.jpg" width="96" alt="USB-C cable with an on and off switch"> | [USB-C cable with an on and off switch](#a21) | 1 | The master switch | Planned |
+| **A1** | <img src="images/parts/a01-raspberry-pi-4.jpg" width="96" alt="Raspberry Pi 4 Model B, 1 GB"> | [Raspberry Pi 4 Model B, 1 GB](#a1) | **×1** | Runs the radio program, plays the sounds and drives the screens | Wired |
+| **A2** | <img src="images/parts/a02-power-supply.jpg" width="96" alt="USB-C power supply, 5.1 V 3 A"> | [USB-C power supply, 5.1 V 3 A](#a2) | **×1, in the A1 kit** | Powers the whole radio through one cable | Wired |
+| **A3** | <img src="images/parts/a03-microsd-card.jpg" width="96" alt="microSD card, 32 GB"> | [microSD card, 32 GB](#a3) | **×1** | Holds Raspberry Pi OS and the radio program | Wired |
+| **A4** | <img src="images/parts/a04-sd-adapter.jpg" width="96" alt="microSD to SD adapter"> | [microSD to SD adapter](#a4) | **×1** | Lets a computer's SD slot write the card | Wired |
+| **A5** | <img src="images/parts/a05-bar-display.jpg" width="96" alt="3.7 in bar display, 240 × 960 pixels"> | [3.7 in bar display, 240 × 960 pixels](#a5) | **×2** | Shows the frequency, the channel and the spectrum. The two sit end to end behind the window | One wired, one planned |
+| **A6** | <img src="images/parts/a06-qualia-board.jpg" width="96" alt="Qualia ESP32-S3 board for RGB-666 displays"> | [Qualia ESP32-S3 board for RGB-666 displays](#a6) | **×2** | Drives one bar display each. The Pi talks to each board over USB | One wired, one planned |
+| **A7** | <img src="images/parts/a07-usb-a-to-c-cable.jpg" width="96" alt="USB-A to USB-C cable, 91 cm"> | [USB-A to USB-C cable, 91 cm](#a7) | **×3** | Connects the Pi to each Qualia board, and to the keypad | Two wired, one planned |
+| **A8** | <img src="images/parts/a08-keypad.jpg" width="96" alt="SinLoon keypad, 6 keys and a knob"> | [SinLoon keypad, 6 keys and a knob](#a8) | **×1** | The channel keys and the volume knob | Wired |
+| **A9** | <img src="images/parts/a09-vu-meters.jpg" width="96" alt="Pair of VU meters, 0 to 500 µA"> | [Pair of VU meters, 0 to 500 µA](#a9) | **×1 pair** | The SIGNAL and AUDIO needles | Planned |
+| **A10** | <img src="images/parts/a10-trim-potentiometer.jpg" width="96" alt="10 kΩ trim potentiometer"> | [10 kΩ trim potentiometer](#a10) | **×2** | Sets the full scale of each needle | Planned |
+| **A11** | <img src="images/parts/a11-step-up-cable.jpg" width="96" alt="USB 5 V to 12 V step-up cable"> | [USB 5 V to 12 V step-up cable](#a11) | **×1** | Turns 5 V into the 12 V that lights the meters | Planned |
+| **A12** | <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="96" alt="USB-A socket on four jumper wires"> | [USB-A socket on four jumper wires](#a12) | **×1** | Gives the step-up cable a USB socket on the Pi's header | Planned |
+| **A13** | <img src="images/parts/a13-speaker.jpg" width="96" alt="MonkMakes Amplified Speaker 2"> | [MonkMakes Amplified Speaker 2](#a13) | **×1** | The speaker, with its own amplifier | Wired |
+| **A14** | <img src="images/parts/a14-audio-cable.jpg" width="96" alt="3.5 mm audio cable, 30 cm, one end at a right angle"> | [3.5 mm audio cable, 30 cm, one end at a right angle](#a14) | **×1** | Takes the sound from the Pi's jack to the speaker | Wired |
+| **A15** | <img src="images/parts/a15-cb-microphone.jpg" width="96" alt="Uniden BC645 CB microphone"> | [Uniden BC645 CB microphone](#a15) | **×1** | The hand microphone and its push-to-talk button | Planned |
+| **A16** | <img src="images/parts/a16-microphone-socket.jpg" width="96" alt="4-pin microphone socket for the face"> | [4-pin microphone socket for the face](#a16) | **×1** | The socket that the microphone plugs into | Planned |
+| **A17** | <img src="images/parts/a17-usb-sound-adapter.jpg" width="96" alt="USB sound adapter with a microphone input"> | [USB sound adapter with a microphone input](#a17) | **×1** | Gives the Pi the microphone input it lacks | Planned |
+| **A18** | <img src="images/parts/a18-trrs-plug.jpg" width="96" alt="3.5 mm TRRS plug with screw terminals"> | [3.5 mm TRRS plug with screw terminals](#a18) | **×1** | Joins the microphone's wires to the sound adapter | Planned |
+| **A19** | <img src="images/parts/a19-jumper-wires.jpg" width="96" alt="Female-to-female jumper wires, 30 cm"> | [Female-to-female jumper wires, 30 cm](#a19) | **×1 strip of 20** | Join the Pi's pins to the speaker, the needles and the push-to-talk button | Wired |
+| **A20** | <img src="images/parts/a20-usb-c-panel-socket.jpg" width="96" alt="USB-C panel socket on a 30 cm cable"> | [USB-C panel socket on a 30 cm cable](#a20) | **×1** | The power socket on the back of the case | Planned |
+| **A21** | <img src="images/parts/a21-switch-cable.jpg" width="96" alt="USB-C cable with an on and off switch"> | [USB-C cable with an on and off switch](#a21) | **×1** | The master switch | Planned |
 
-Four notes on these parts.
+Five notes on these parts.
 
 - **The keypad must be this model.** The installer programs it over USB, and the tool it uses only speaks to keypads
   built on the CH57x chip that identify as `1189:8890`.
@@ -44,6 +44,8 @@ Four notes on these parts.
   240 × 960 bar.
 - **Use wires with a socket at each end on the Pi's pins.** The bench build first used crocodile clip leads. Their
   clips are too wide for pins that sit 2.54 mm apart and they did not hold, so A19 replaces them.
+- **A2 comes with A1 in the kit.** The Pi kit I ordered has its power supply in the box. Buy A2 only if your Pi
+  came without one. The radio needs one supply.
 - **One cable powers everything.** The supply A2 plugs into the socket A20 on the back. Inside, the switch cable A21
   takes the power to the Pi, and the Pi powers every other part through its USB ports and its header.
   [WIRING.md](WIRING.md#power) shows the path.
@@ -56,127 +58,127 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a01-raspberry-pi-4.jpg" width="200" alt="Raspberry Pi 4 Model B, 1 GB"> | Runs the radio program, plays the sounds and drives the screens. Every other part takes its power from it.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** PiShop 1GB-9002, a kit with a power supply (A2) and 3 heat sinks<br>**Processor:** Broadcom BCM2711, four Cortex-A72 cores<br>**Memory:** 1 GB<br>**Ports:** 2 USB 3.0, 2 USB 2.0, USB-C for power<br>**Header:** 40 pins<br>**Audio:** 3.5 mm jack, 4 poles<br>**Board:** 85 × 56 mm<br>**Maker's page:** https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf |
+| <img src="images/parts/a01-raspberry-pi-4.jpg" width="200" alt="Raspberry Pi 4 Model B, 1 GB"> | Runs the radio program, plays the sounds and drives the screens. Every other part takes its power from it.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** PiShop 1GB-9002, a kit with a power supply (A2) and 3 heat sinks<br>**Connects:** Every other part connects to it. [The diagram](WIRING.md#every-part-and-every-link) shows each link.<br>**Processor:** Broadcom BCM2711, four Cortex-A72 cores<br>**Memory:** 1 GB<br>**Ports:** 2 USB 3.0, 2 USB 2.0, USB-C for power<br>**Header:** 40 pins<br>**Audio:** 3.5 mm jack, 4 poles<br>**Board:** 85 × 56 mm<br>**Maker's page:** https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf |
 
 ### <a id="a2"></a>A2. USB-C power supply, 5.1 V 3 A
 
 | | |
 |---|---|
-| <img src="images/parts/a02-power-supply.jpg" width="200" alt="USB-C power supply, 5.1 V 3 A"> | Powers the whole radio. Its cable is the only one that leaves the case: it plugs into the socket A20 on the back.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** The supply that came in the box with A1. Raspberry Pi's own 15 W USB-C supply is the model to buy on its own, and the one the switch cable A21 is made for.<br>**Output:** 5.1 V, 3 A<br>**Plug:** USB-C. On Raspberry Pi's own supply it ends a 1.5 m cable that does not come off.<br>**Maker's page:** https://www.raspberrypi.com/products/type-c-power-supply/ |
+| <img src="images/parts/a02-power-supply.jpg" width="200" alt="USB-C power supply, 5.1 V 3 A"> | Powers the whole radio. Its cable is the only one that leaves the case: it plugs into the socket A20 on the back.<br><br>**Quantity:** ×1, in the A1 kit<br>**In version 1.0:** wired<br>**Reference:** The supply that came in the box with A1. Raspberry Pi's own 15 W USB-C supply is the model to buy on its own, and the one the switch cable A21 is made for.<br>**Connects:** Its cable plugs into the socket A20, direct. On the bench it plugs straight into the Pi.<br>**Output:** 5.1 V, 3 A<br>**Plug:** USB-C. On Raspberry Pi's own supply it ends a 1.5 m cable that does not come off.<br>**Maker's page:** https://www.raspberrypi.com/products/type-c-power-supply/ |
 
 ### <a id="a3"></a>A3. microSD card, 32 GB
 
 | | |
 |---|---|
-| <img src="images/parts/a03-microsd-card.jpg" width="200" alt="microSD card, 32 GB"> | Holds Raspberry Pi OS and the radio program.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** Patriot 32 GB, Amazon B08KSSXKYR<br>**Capacity:** 32 GB, microSDHC<br>**Adapter:** None in the box. A4 is the adapter. |
+| <img src="images/parts/a03-microsd-card.jpg" width="200" alt="microSD card, 32 GB"> | Holds Raspberry Pi OS and the radio program.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** Patriot 32 GB, Amazon B08KSSXKYR<br>**Connects:** Goes into the Pi's microSD slot, direct.<br>**Capacity:** 32 GB, microSDHC<br>**Adapter:** None in the box. A4 is the adapter. |
 
 ### <a id="a4"></a>A4. microSD to SD adapter
 
 | | |
 |---|---|
-| <img src="images/parts/a04-sd-adapter.jpg" width="200" alt="microSD to SD adapter"> | Lets a computer's SD slot write the card.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** Adafruit 5447<br>**Format:** microSD to SD, short version<br>**Maker's page:** https://www.adafruit.com/product/5447 |
+| <img src="images/parts/a04-sd-adapter.jpg" width="200" alt="microSD to SD adapter"> | Lets a computer's SD slot write the card.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** Adafruit 5447<br>**Connects:** Holds A3 in a computer's SD slot while you prepare the card. It does not go in the radio.<br>**Format:** microSD to SD, short version<br>**Maker's page:** https://www.adafruit.com/product/5447 |
 
 ### <a id="a5"></a>A5. 3.7 in bar display, 240 × 960 pixels
 
 | | |
 |---|---|
-| <img src="images/parts/a05-bar-display.jpg" width="200" alt="3.7 in bar display, 240 × 960 pixels"> | Shows the frequency, the channel and the spectrum. The finished radio has two, end to end behind the window.<br><br>**Quantity:** 2<br>**In version 1.0:** one wired, one planned<br>**Reference:** Adafruit 5799<br>**Model:** HD371001C40, no touch screen<br>**Driver:** ST7701S<br>**Interface:** TTL RGB on a 40-pin ribbon<br>**Outline:** 98.89 × 25.3 mm<br>**Lit area:** 91.44 × 22.86 mm<br>**Ribbon:** 20.5 mm wide, 50 mm long<br>**Maker's page:** https://www.adafruit.com/product/5799 |
+| <img src="images/parts/a05-bar-display.jpg" width="200" alt="3.7 in bar display, 240 × 960 pixels"> | Shows the frequency, the channel and the spectrum. The finished radio has two, end to end behind the window.<br><br>**Quantity:** ×2<br>**In version 1.0:** one wired, one planned<br>**Reference:** Adafruit 5799<br>**Connects:** Its ribbon goes straight into the Qualia board A6, direct.<br>**Model:** HD371001C40, no touch screen<br>**Driver:** ST7701S<br>**Interface:** TTL RGB on a 40-pin ribbon<br>**Outline:** 98.89 × 25.3 mm<br>**Lit area:** 91.44 × 22.86 mm<br>**Ribbon:** 20.5 mm wide, 50 mm long<br>**Maker's page:** https://www.adafruit.com/product/5799 |
 
 ### <a id="a6"></a>A6. Qualia ESP32-S3 board for RGB-666 displays
 
 | | |
 |---|---|
-| <img src="images/parts/a06-qualia-board.jpg" width="200" alt="Qualia ESP32-S3 board for RGB-666 displays"> | Drives one bar display. Each display has its own board, and the Pi talks to each board over USB.<br><br>**Quantity:** 2<br>**In version 1.0:** one wired, one planned<br>**Reference:** Adafruit 5800<br>**Chip:** ESP32-S3, 16 MB of flash, 8 MB of PSRAM<br>**Display connector:** 40 pins, RGB-666<br>**USB:** USB-C, for power and programming<br>**Board:** 58 × 43 mm<br>**Maker's page:** https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays |
+| <img src="images/parts/a06-qualia-board.jpg" width="200" alt="Qualia ESP32-S3 board for RGB-666 displays"> | Drives one bar display. Each display has its own board, and the Pi talks to each board over USB.<br><br>**Quantity:** ×2<br>**In version 1.0:** one wired, one planned<br>**Reference:** Adafruit 5800<br>**Connects:** A USB-A port of the Pi, with A7. The ribbon of A5, direct.<br>**Chip:** ESP32-S3, 16 MB of flash, 8 MB of PSRAM<br>**Display connector:** 40 pins, RGB-666<br>**USB:** USB-C, for power and programming<br>**Board:** 58 × 43 mm<br>**Maker's page:** https://learn.adafruit.com/adafruit-qualia-esp32-s3-for-rgb666-displays |
 
 ### <a id="a7"></a>A7. USB-A to USB-C cable, 91 cm
 
 | | |
 |---|---|
-| <img src="images/parts/a07-usb-a-to-c-cable.jpg" width="200" alt="USB-A to USB-C cable, 91 cm"> | Connects a USB-A port of the Pi to a Qualia board. The third one goes to the keypad, in place of the keypad's own cable.<br><br>**Quantity:** 3<br>**In version 1.0:** two wired, one planned<br>**Reference:** PiShop CS-PID-45<br>**Standard:** USB 2.0. It must be a data cable.<br>**Length:** 91 cm (3 ft). A shorter one fits the case better. |
+| <img src="images/parts/a07-usb-a-to-c-cable.jpg" width="200" alt="USB-A to USB-C cable, 91 cm"> | Connects a USB-A port of the Pi to a Qualia board. The third one goes to the keypad, in place of the keypad's own cable.<br><br>**Quantity:** ×3<br>**In version 1.0:** two wired, one planned<br>**Reference:** PiShop CS-PID-45<br>**Connects:** Two go from USB-A ports of the Pi to the two Qualia boards A6. One goes from a USB-A port to the keypad A8.<br>**Standard:** USB 2.0. It must be a data cable.<br>**Length:** 91 cm (3 ft). A shorter one fits the case better. |
 
 ### <a id="a8"></a>A8. SinLoon keypad, 6 keys and a knob
 
 | | |
 |---|---|
-| <img src="images/parts/a08-keypad.jpg" width="200" alt="SinLoon keypad, 6 keys and a knob"> | The channel keys and the volume knob.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** Amazon B0DN9T9J75, model SL2024502<br>**Keys:** 6 mechanical keys and 1 knob that turns and presses<br>**Light:** RGB, under the keys<br>**Connection:** USB-C, cable in the box<br>**USB identity:** `1189:8890`, which the installer looks for |
+| <img src="images/parts/a08-keypad.jpg" width="200" alt="SinLoon keypad, 6 keys and a knob"> | The channel keys and the volume knob.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** Amazon B0DN9T9J75, model SL2024502<br>**Connects:** A USB-A port of the Pi, with A7.<br>**Keys:** 6 mechanical keys and 1 knob that turns and presses<br>**Light:** RGB, under the keys<br>**Connection:** USB-C, cable in the box<br>**USB identity:** `1189:8890`, which the installer looks for |
 
 ### <a id="a9"></a>A9. Pair of VU meters, 0 to 500 µA
 
 | | |
 |---|---|
-| <img src="images/parts/a09-vu-meters.jpg" width="200" alt="Pair of VU meters, 0 to 500 µA"> | The SIGNAL and AUDIO needles.<br><br>**Quantity:** 1 pair<br>**In version 1.0:** planned<br>**Reference:** Amazon B0GV1VC7PZ<br>**In the box:** 2 meters and 2 driver boards<br>**Scale:** 0 to 500 µA<br>**Size:** 46 × 48 × 46 mm each<br>**Lamp:** 12 V LED<br>**Driver boards:** 6 to 12 V in, 55 mA |
+| <img src="images/parts/a09-vu-meters.jpg" width="200" alt="Pair of VU meters, 0 to 500 µA"> | The SIGNAL and AUDIO needles.<br><br>**Quantity:** ×1 pair<br>**In version 1.0:** planned<br>**Reference:** Amazon B0GV1VC7PZ<br>**Connects:** Each needle: a pin of the Pi, the potentiometer A10, then the meter's + terminal, with A19 wires. The − terminal goes back to a ground pin with A19. The lamps: the two wires of A11, direct.<br>**In the box:** 2 meters and 2 driver boards<br>**Scale:** 0 to 500 µA<br>**Size:** 46 × 48 × 46 mm each<br>**Lamp:** 12 V LED<br>**Driver boards:** 6 to 12 V in, 55 mA |
 
 ### <a id="a10"></a>A10. 10 kΩ trim potentiometer
 
 | | |
 |---|---|
-| <img src="images/parts/a10-trim-potentiometer.jpg" width="200" alt="10 kΩ trim potentiometer"> | Sets the full scale of each needle. One sits in series with each meter.<br><br>**Quantity:** 2<br>**In version 1.0:** planned<br>**Reference:** PiShop 88<br>**Value:** 10 kΩ<br>**Pins:** 3, spaced 2.54 mm |
+| <img src="images/parts/a10-trim-potentiometer.jpg" width="200" alt="10 kΩ trim potentiometer"> | Sets the full scale of each needle. One sits in series with each meter.<br><br>**Quantity:** ×2<br>**In version 1.0:** planned<br>**Reference:** PiShop 88<br>**Connects:** Sits between a pin of the Pi and the + terminal of a meter, with an A19 wire on each side.<br>**Value:** 10 kΩ<br>**Pins:** 3, spaced 2.54 mm |
 
 ### <a id="a11"></a>A11. USB 5 V to 12 V step-up cable
 
 | | |
 |---|---|
-| <img src="images/parts/a11-step-up-cable.jpg" width="200" alt="USB 5 V to 12 V step-up cable"> | The meters' lamps need 12 V and the Pi only has 5 V. This cable takes 5 V on its USB-A plug and gives 12 V on two bare wires, red for + and black for −. Its plug goes into the socket A12, and its two wires go to the lamps of the two meters.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** SinLoon, Amazon B0F2YKGS25. It comes in a pack of 3.<br>**Input:** USB-A plug, 5 V, 2 A at most<br>**Output:** 12 V, 0.8 A at most, on bare wires<br>**Length:** 88 cm |
+| <img src="images/parts/a11-step-up-cable.jpg" width="200" alt="USB 5 V to 12 V step-up cable"> | The meters' lamps need 12 V and the Pi only has 5 V. This cable takes 5 V on its USB-A plug and gives 12 V on two bare wires, red for + and black for −. Its plug goes into the socket A12, and its two wires go to the lamps of the two meters.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** SinLoon, Amazon B0F2YKGS25. It comes in a pack of 3.<br>**Connects:** Its USB plug goes into A12, direct. Its red and black wires go to the lamps of A9, direct.<br>**Input:** USB-A plug, 5 V, 2 A at most<br>**Output:** 12 V, 0.8 A at most, on bare wires<br>**Length:** 88 cm |
 
 ### <a id="a12"></a>A12. USB-A socket on four jumper wires
 
 | | |
 |---|---|
-| <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="200" alt="USB-A socket on four jumper wires"> | The four USB ports of the Pi are taken by the two Qualia boards, the keypad and the sound adapter. This short cable gives the step-up cable A11 a fifth USB-A socket, fed from two pins of the Pi's header. Only its red and black wires are used.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4449<br>**Socket:** USB-A female, on a 30 cm cable<br>**Wires:** Four female ends spaced 2.54 mm. Red is 5 V and goes to pin 4. Black is ground and goes to pin 34. Green and white are the data lines and stay free, each one insulated.<br>**Maker's page:** https://www.adafruit.com/product/4449 |
+| <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="200" alt="USB-A socket on four jumper wires"> | The four USB ports of the Pi are taken by the two Qualia boards, the keypad and the sound adapter. This short cable gives the step-up cable A11 a fifth USB-A socket, fed from two pins of the Pi's header. Only its red and black wires are used.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4449<br>**Connects:** Its red and black ends slide onto pins 4 and 34 of the Pi, direct. A11 plugs into its socket.<br>**Socket:** USB-A female, on a 30 cm cable<br>**Wires:** Four female ends spaced 2.54 mm. Red is 5 V and goes to pin 4. Black is ground and goes to pin 34. Green and white are the data lines and stay free, each one insulated.<br>**Maker's page:** https://www.adafruit.com/product/4449 |
 
 ### <a id="a13"></a>A13. MonkMakes Amplified Speaker 2
 
 | | |
 |---|---|
-| <img src="images/parts/a13-speaker.jpg" width="200" alt="MonkMakes Amplified Speaker 2"> | The speaker, with its own amplifier.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** PiShop 348-1<br>**Power:** 3.3 to 6 V, 300 mA at most<br>**Speaker:** 8 Ω, 500 mW<br>**Input:** 3.5 mm jack<br>**Size:** 51 × 56 × 61 mm<br>**Maker's page:** https://monkmakes.com/downloads/datasheet_amp_speaker_2.pdf |
+| <img src="images/parts/a13-speaker.jpg" width="200" alt="MonkMakes Amplified Speaker 2"> | The speaker, with its own amplifier.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** PiShop 348-1<br>**Connects:** Sound: the Pi's 3.5 mm jack, with A14. Power: pins 2 and 6 of the Pi, with two A19 wires.<br>**Power:** 3.3 to 6 V, 300 mA at most<br>**Speaker:** 8 Ω, 500 mW<br>**Input:** 3.5 mm jack<br>**Size:** 51 × 56 × 61 mm<br>**Maker's page:** https://monkmakes.com/downloads/datasheet_amp_speaker_2.pdf |
 
 ### <a id="a14"></a>A14. 3.5 mm audio cable, 30 cm, one end at a right angle
 
 | | |
 |---|---|
-| <img src="images/parts/a14-audio-cable.jpg" width="200" alt="3.5 mm audio cable, 30 cm, one end at a right angle"> | Takes the sound from the Pi's jack to the speaker.<br><br>**Quantity:** 1<br>**In version 1.0:** wired<br>**Reference:** Amazon B08F2GRHXC<br>**Plugs:** 3.5 mm male at both ends, one at 90°<br>**Length:** 30 cm |
+| <img src="images/parts/a14-audio-cable.jpg" width="200" alt="3.5 mm audio cable, 30 cm, one end at a right angle"> | Takes the sound from the Pi's jack to the speaker.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** Amazon B08F2GRHXC<br>**Connects:** From the Pi's 3.5 mm jack to the jack of the speaker A13.<br>**Plugs:** 3.5 mm male at both ends, one at 90°<br>**Length:** 30 cm |
 
 ### <a id="a15"></a>A15. Uniden BC645 CB microphone
 
 | | |
 |---|---|
-| <img src="images/parts/a15-cb-microphone.jpg" width="200" alt="Uniden BC645 CB microphone"> | The hand microphone and its push-to-talk button. It plugs into the socket A16 on the face.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** Amazon B008CLIB5K<br>**Plug:** 4 pins, female, wired the Cobra and Uniden way<br>**Cord:** Coiled, 2.4 m<br>**Button:** Push to talk |
+| <img src="images/parts/a15-cb-microphone.jpg" width="200" alt="Uniden BC645 CB microphone"> | The hand microphone and its push-to-talk button. It plugs into the socket A16 on the face.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B008CLIB5K<br>**Connects:** Its plug goes into the socket A16, direct.<br>**Plug:** 4 pins, female, wired the Cobra and Uniden way<br>**Cord:** Coiled, 2.4 m<br>**Button:** Push to talk |
 
 ### <a id="a16"></a>A16. 4-pin microphone socket for the face
 
 | | |
 |---|---|
-| <img src="images/parts/a16-microphone-socket.jpg" width="200" alt="4-pin microphone socket for the face"> | The socket on the face that the microphone A15 plugs into. Cobra and Uniden CB radios have the same socket. Behind the face, its pins 1 and 2 go to the plug A18, and its pins 1 and 3 go to the Pi's header for the push-to-talk button.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** Workman C-4P. I have not ordered it yet.<br>**Pins:** 4, male<br>**Body:** Metal, with a nut and a washer<br>**Hole:** The face has a 16.2 mm hole for it. Workman does not give the hole size: hold the socket in the hole before you print the face.<br>**Wires:** Its pins take soldered wires. It is the one part of the radio that needs a soldering iron.<br>**Seller's page:** https://cbradiosupply.com/products/cb-radio-accessories-workman-c-4p-replacement-4-pin-cb-radio-microphone-panel-jack-mount |
+| <img src="images/parts/a16-microphone-socket.jpg" width="200" alt="4-pin microphone socket for the face"> | The socket on the face that the microphone A15 plugs into. Cobra and Uniden CB radios have the same socket. Behind the face, its pins 1 and 2 go to the plug A18, and its pins 1 and 3 go to the Pi's header for the push-to-talk button.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Workman C-4P. I have not ordered it yet.<br>**Connects:** Pins 1 and 2: to the screw terminals of A18, with A19 wires soldered at the socket. Pins 1 and 3: to pins 9 and 11 of the Pi, with A19 wires soldered at the socket.<br>**Pins:** 4, male<br>**Body:** Metal, with a nut and a washer<br>**Hole:** The face has a 16.2 mm hole for it. Workman does not give the hole size: hold the socket in the hole before you print the face.<br>**Wires:** Its pins take soldered wires. It is the one part of the radio that needs a soldering iron.<br>**Seller's page:** https://cbradiosupply.com/products/cb-radio-accessories-workman-c-4p-replacement-4-pin-cb-radio-microphone-panel-jack-mount |
 
 ### <a id="a17"></a>A17. USB sound adapter with a microphone input
 
 | | |
 |---|---|
-| <img src="images/parts/a17-usb-sound-adapter.jpg" width="200" alt="USB sound adapter with a microphone input"> | The Pi has a sound output but no microphone input. This adapter plugs into a USB port of the Pi and adds a 3.5 mm jack with a microphone input. The plug A18 goes into that jack.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** DuKabel, Amazon B07RS11M1T<br>**Jack:** 3.5 mm, 4 poles (TRRS), microphone and output<br>**Standard:** CTIA<br>**Cable:** Braided, 25 cm |
+| <img src="images/parts/a17-usb-sound-adapter.jpg" width="200" alt="USB sound adapter with a microphone input"> | The Pi has a sound output but no microphone input. This adapter plugs into a USB port of the Pi and adds a 3.5 mm jack with a microphone input. The plug A18 goes into that jack.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** DuKabel, Amazon B07RS11M1T<br>**Connects:** A USB-A port of the Pi, direct, on its own cable. A18 plugs into its jack.<br>**Jack:** 3.5 mm, 4 poles (TRRS), microphone and output<br>**Standard:** CTIA<br>**Cable:** Braided, 25 cm |
 
 ### <a id="a18"></a>A18. 3.5 mm TRRS plug with screw terminals
 
 | | |
 |---|---|
-| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
+| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2.<br>**Connects:** Plugs into the jack of A17, direct. The wires from A16 go into its screw terminals.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
 
 ### <a id="a19"></a>A19. Female-to-female jumper wires, 30 cm
 
 | | |
 |---|---|
-| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped or soldered. The radio uses 8 of the 20.<br><br>**Quantity:** 1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
+| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped.<br><br>**Quantity:** ×1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949<br>**Connects:** 12 of the 20: two for the speaker, three for each needle, two for the push-to-talk button, two from the microphone socket to A18.<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
 
 ### <a id="a20"></a>A20. USB-C panel socket on a 30 cm cable
 
 | | |
 |---|---|
-| <img src="images/parts/a20-usb-c-panel-socket.jpg" width="200" alt="USB-C panel socket on a 30 cm cable"> | The power socket on the back of the case. The supply A2 plugs in from outside. Inside, its cable goes to the switch cable A21.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4218. I have not ordered it yet.<br>**Ends:** USB-C female in the panel, USB-C male at the end of the cable<br>**Cable:** 30 cm<br>**Hole:** 21.5 to 27 mm across, in a panel up to 16 mm thick. The nut is about 29.5 mm across.<br>**Maker's page:** https://www.adafruit.com/product/4218 |
+| <img src="images/parts/a20-usb-c-panel-socket.jpg" width="200" alt="USB-C panel socket on a 30 cm cable"> | The power socket on the back of the case. The supply A2 plugs in from outside. Inside, its cable goes to the switch cable A21.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4218. I have not ordered it yet.<br>**Connects:** The supply A2 plugs in from outside. Its cable plugs into the switch cable A21, direct.<br>**Ends:** USB-C female in the panel, USB-C male at the end of the cable<br>**Cable:** 30 cm<br>**Hole:** 21.5 to 27 mm across, in a panel up to 16 mm thick. The nut is about 29.5 mm across.<br>**Maker's page:** https://www.adafruit.com/product/4218 |
 
 ### <a id="a21"></a>A21. USB-C cable with an on and off switch
 
 | | |
 |---|---|
-| <img src="images/parts/a21-switch-cable.jpg" width="200" alt="USB-C cable with an on and off switch"> | The master switch: one click cuts the power of the whole radio, and a red light shows when it is on.<br><br>**Quantity:** 1<br>**In version 1.0:** planned<br>**Reference:** The Pi Hut 102509. I have not ordered it yet.<br>**Ends:** USB-C female to USB-C male<br>**Length:** About 31 cm<br>**Switch:** Push to turn on, push again to turn off, with a red light<br>**Use:** Made for the Raspberry Pi 4 with its own power supply. It passes power only, no data.<br>**Maker's page:** https://thepihut.com/products/usb-c-cable-with-switch |
+| <img src="images/parts/a21-switch-cable.jpg" width="200" alt="USB-C cable with an on and off switch"> | The master switch: one click cuts the power of the whole radio, and a red light shows when it is on.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** The Pi Hut 102509. I have not ordered it yet.<br>**Connects:** From the cable of A20 to the Pi's USB-C port, direct.<br>**Ends:** USB-C female to USB-C male<br>**Length:** About 31 cm<br>**Switch:** Push to turn on, push again to turn off, with a red light<br>**Use:** Made for the Raspberry Pi 4 with its own power supply. It passes power only, no data.<br>**Maker's page:** https://thepihut.com/products/usb-c-cable-with-switch |
 
 ## Where the pictures come from
 

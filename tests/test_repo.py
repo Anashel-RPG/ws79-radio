@@ -120,7 +120,7 @@ class Guides(unittest.TestCase):
         self.assertEqual([r[0] for r in rows], ["A%d" % n for n in range(1, 22)])
         for label, anchor, qty in rows:
             self.assertEqual(anchor, label.lower())
-            self.assertRegex(qty.strip(), r"^\d", "%s has no quantity" % label)
+            self.assertRegex(qty.strip(), r"^\*\*×\d", "%s has no quantity such as ×2" % label)
             self.assertIn('<a id="%s"></a>%s. ' % (anchor, label), text)
         for picture in re.findall(r'src="images/parts/([^"]+)"', text):
             self.assertTrue(os.path.isfile(os.path.join(REPO, "docs", "images", "parts", picture)), picture)

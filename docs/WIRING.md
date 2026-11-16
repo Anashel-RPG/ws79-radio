@@ -18,6 +18,25 @@ Version 1.0 connects the keypad, one display with its Qualia board, and the spea
 plugs straight into the Pi. In the finished radio it plugs into a socket on the back, and a switch cable inside takes
 the power on to the Pi. [Power](#power) shows that path.
 
+## Every part and every link
+
+Each link is marked one of two ways. A yellow chip names the part from [the parts list](BOM.md) that makes the link.
+"direct" means the two plug into each other with nothing between them.
+
+![Every part of the finished radio, and every link between them](images/wiring/every-link.png)
+
+Five parts are there only to make a link, and the drawing shows where each one sits.
+
+| Part | Why the radio needs it |
+|---|---|
+| A14, the audio cable | The speaker takes its sound on a 3.5 mm jack. A14 takes it there from the Pi's own 3.5 mm jack. The two A19 wires on pins 2 and 6 give the speaker its power only. |
+| A17, the USB sound adapter | The Pi has a sound output and no microphone input. A17 plugs into a USB-A port and adds one. |
+| A18, the TRRS plug with screws | It is the plug that goes into A17's jack. The two sound wires of the microphone socket A16 are screwed into it. |
+| A12, the USB-A socket on wires | The Pi's four USB-A ports are taken: two Qualia boards, the keypad and A17. A12 is a fifth socket, for power only, fed by pins 4 and 34 of the header. |
+| A11, the step-up cable | The meters' lamps need 12 V. A11 plugs into A12, takes its 5 V and gives 12 V on two wires that go to the lamps. It comes in a pack of 3, and the radio uses one. |
+
+No cable goes to a computer. The radio works alone and joins the network over the Pi's Wi-Fi.
+
 ## Version 1.0 on the bench
 
 Unplug the Pi's power before you connect or move a wire.
@@ -108,6 +127,10 @@ start with each potentiometer at its 10 kΩ maximum, send the largest signal, th
 needle reaches the end of its scale.
 
 ![Each needle: a pin of the Pi, a potentiometer, a meter and its ground](images/wiring/needles.png)
+
+Each needle takes three A19 wires: pin to potentiometer, potentiometer to the meter's + terminal, and the meter's −
+terminal back to a ground pin. The potentiometer's pins take the wires' sockets directly. I have not checked how a
+wire holds on the meter's terminals. If they are screws, cut one end of the wire, strip it and hold it under the nut.
 
 ### The microphone and its push-to-talk button
 
