@@ -94,8 +94,9 @@ groups.
 
 ![The shell seen from above, from the front and from the side](images/shell-views.png)
 
-The file is the shell's outer shape. It has no opening for the USB-C port yet: the plan is an opening of 9.2 × 3.5 mm
-in the back, and how the cable reaches it is not decided.
+The file is the shell's outer shape. It has no opening for power yet. The plan is a round hole of 21.5 to 27 mm in
+the back for the power socket (A20), which takes the supply's cable. [WIRING.md](../docs/WIRING.md#power) shows the
+path from that socket to the Pi.
 
 ## The sides
 
@@ -123,18 +124,18 @@ the two Qualia boards and of the parts on the floor are a proposal.
 
 | Mark | Part | Size in mm | What it needs |
 |---|---|---|---|
-| 1 | Raspberry Pi 4 (part 1) | 85 × 56 | Four posts on the floor of the case |
-| 2 | The two Qualia boards (parts 4 and 18) | 58 × 43 each | A rest behind each display, near its 50 mm ribbon |
-| 3 | The two bar displays (part 3) | 98.89 × 25.3 each | A carrier behind the window, the two end to end |
+| 1 | Raspberry Pi 4 (A1) | 85 × 56 | Four posts on the floor of the case |
+| 2 | The two Qualia boards (A6) | 58 × 43 each | A rest behind each display, near its 50 mm ribbon |
+| 3 | The two bar displays (A5) | 98.89 × 25.3 each | A carrier behind the window, the two end to end |
 | | The window of smoked acrylic | 211.5 × 29.5 | A rebate behind the face |
-| 4 | The two meters (part 5) | 46 × 48 × 46 each | Their four screws in the face |
-| 5 | The two potentiometers (part 6) | | They hang on their wires. A cable tie is enough. |
-| 6 | The keypad (part 7) | Body of 99 × 56.6, measured on a photo | Its pocket in the back of the face, and a mount that holds it there |
-| 7 | The speaker (part 11) | 51 × 56 × 61 | A mount behind the grille |
-| 8 | The microphone socket (part 21) | Hole of 16.2 | Its nut on the face |
-| 9 | The USB sound adapter (part 9) | | It hangs on its cable. A cable tie is enough. |
-| 10 | The 5 V to 12 V cable and its USB-A socket (parts 13 and 20) | | A place on the floor, coiled |
-| 11 | The Pi's USB-C port | Opening of 9.2 × 3.5 in the back | A way for the cable to reach the back |
+| 4 | The two meters (A9) | 46 × 48 × 46 each | Their four screws in the face |
+| 5 | The two potentiometers (A10) | | They hang on their wires. A cable tie is enough. |
+| 6 | The keypad (A8) | Body of 99 × 56.6, measured on a photo | Its pocket in the back of the face, and a mount that holds it there |
+| 7 | The speaker (A13) | 51 × 56 × 61 | A mount behind the grille |
+| 8 | The microphone socket (A16) | Hole of 16.2 | Its nut on the face |
+| 9 | The USB sound adapter (A17) | | It hangs on its cable. A cable tie is enough. |
+| 10 | The 5 V to 12 V cable and its USB-A socket (A11 and A12) | | A place on the floor, coiled |
+| 11 | The Pi's USB-C port, fed by the switch cable (A21) | | The switch cable runs from the power socket on the back to this port |
 
 The two displays sit end to end behind the window. [WIRING.md](../docs/WIRING.md) shows them to scale.
 
@@ -144,7 +145,11 @@ The two displays sit end to end behind the window. [WIRING.md](../docs/WIRING.md
 - The carrier that holds the two displays and the window.
 - The mounts of the keypad and of the speaker.
 - The joint between the two halves of the face, and the joint between the two halves of the shell.
-- The back as a plate of its own, and the opening for the USB-C port.
+- The back as a plate of its own.
+- The round hole of 21.5 to 27 mm for the power socket (A20) in the back. The shell's print file has no opening for
+  power yet.
+- A hole and a holder for the button of the switch cable (A21), if the switch goes inside the case. On the supply's
+  cable, outside the case, it needs neither.
 - The feet. They are in the model and not in the print files.
 - The legends of the face.
 

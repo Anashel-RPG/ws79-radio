@@ -1,0 +1,15 @@
+name: A question about the build
+description: Anything the guides do not answer, from a part to a step.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Look at the troubleshooting guide first: docs/TROUBLESHOOTING.md lists the problems I ran into, with their fixes.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Say which guide and which step it is about, if it is about one.
+    validations:
+      required: true

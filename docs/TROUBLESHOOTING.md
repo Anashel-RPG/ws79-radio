@@ -75,10 +75,10 @@ still starting and does not read the keys.
 The Pi's jack sometimes starts at a low level. The radio program sets it to full at each start, so restart the radio:
 `sudo systemctl restart ws79`. Turn the knob to the right as well: the volume shows on the screen as you turn.
 
-### A clip touches two pins of the speaker
+### A clip slips off or touches two pins of the speaker
 
-The clips are wider than the gap between the pins. Put a jumper wire's socket on the speaker's pin and clip the lead
-to the other end of that wire, or use a wire with a socket at each end.
+Crocodile clips are wider than the gap between the pins, and they do not hold. Use female-to-female jumper wires
+(A19 in [the parts list](BOM.md)): one socket slides onto the Pi's pin and the other onto the speaker's pin.
 
 ## The keypad
 

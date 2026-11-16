@@ -1,5 +1,19 @@
 # Changes
 
+## Since 1.0.0
+
+These changes are in the guides only. The programs are those of 1.0.0.
+
+- The parts list labels its parts A1 to A21, gives each one a quantity, and lists each part once with its quantity:
+  two displays, two Qualia boards, three USB-A to USB-C cables.
+- The crocodile clip leads did not hold on the Pi's pins. Female-to-female jumper wires (A19) replace them.
+- The radio now takes its power from the Pi's own 5.1 V 3 A supply (A2), through a USB-C socket on the back (A20) and a
+  switch cable that is the master switch (A21). The USB-C cable to a computer is no longer in the list.
+- The microphone socket for the face has a reference, the Workman C-4P (A16), and every part has a picture.
+- The wiring guide explains the power path, and the wiring drawings use the new labels.
+- The repository has a contributing guide, a security policy, a code of conduct, two issue forms and a pull request
+  template, in `.github/`.
+
 ## 1.0.0 (15 November 2026)
 
 The first public version: the bench build, with a Raspberry Pi 4, one bar screen, the keypad and the speaker.

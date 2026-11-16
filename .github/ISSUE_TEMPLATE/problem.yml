@@ -1,0 +1,48 @@
+name: Something does not work
+description: A step of the guides, the installer, a program or a part that does not do what the guides say.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before you paste anything, remove your Wi-Fi name and password, your SSH keys and your home address.
+        A security problem goes to the Security tab instead, so only I see it.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part
+      options:
+        - The card utility (setup/setup_sd.py)
+        - The installer (pi/install.sh)
+        - The radio program on the Pi
+        - The screen program on the Qualia board
+        - The keypad
+        - The wiring or a part of the parts list
+        - The case files
+        - The guides
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The number in the file VERSION, or the release you downloaded.
+      placeholder: "1.0.0"
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Your build
+      description: The Pi model, the computer you prepared the card on, and any part that differs from the parts list.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The step you were on, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What the terminal or the screen showed
+      description: Paste the output, or add a photo of the screen.
+      render: text

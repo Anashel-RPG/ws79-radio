@@ -114,19 +114,23 @@ def picture_size(path):
 class Guides(unittest.TestCase):
     """The guides and what they show: the parts list, the pictures set side by side, the case plans."""
 
-    def test_the_parts_list_has_21_parts_each_with_its_sheet(self):
+    def test_the_parts_list_has_21_parts_each_with_its_label_quantity_and_sheet(self):
         text = read("docs", "BOM.md")
-        listed = [int(n) for n in re.findall(r"^\| .*? \| (\d+) \| \[", text, re.M)]
-        self.assertEqual(listed, list(range(1, 22)))
-        for n in listed:
-            self.assertIn("(#part-%d)" % n, text)
-            self.assertIn('<a id="part-%d"></a>%d. ' % (n, n), text)
+        rows = re.findall(r"^\| \*\*(A\d+)\*\* \| <img [^|]*\| \[[^]]+\]\(#(a\d+)\) \| ([^|]+) \|", text, re.M)
+        self.assertEqual([r[0] for r in rows], ["A%d" % n for n in range(1, 22)])
+        for label, anchor, qty in rows:
+            self.assertEqual(anchor, label.lower())
+            self.assertRegex(qty.strip(), r"^\d", "%s has no quantity" % label)
+            self.assertIn('<a id="%s"></a>%s. ' % (anchor, label), text)
+        for picture in re.findall(r'src="images/parts/([^"]+)"', text):
+            self.assertTrue(os.path.isfile(os.path.join(REPO, "docs", "images", "parts", picture)), picture)
 
     def test_the_guides_name_parts_that_exist(self):
-        for name in (("docs", "WIRING.md"), ("print", "README.md")):
-            for group in re.findall(r"\(parts? ([0-9, and]+)\)", read(*name)):
-                for n in re.findall(r"\d+", group):
-                    self.assertTrue(1 <= int(n) <= 21, "%s names part %s" % (name[-1], n))
+        for name in (("docs", "WIRING.md"), ("print", "README.md"), ("docs", "TROUBLESHOOTING.md")):
+            text = read(*name)
+            self.assertNotRegex(text, r"\(parts? \d", "%s still uses the old part numbers" % name[-1])
+            for n in re.findall(r"\bA(\d+)\)", text):
+                self.assertTrue(1 <= int(n) <= 21, "%s names part A%s" % (name[-1], n))
 
     def test_pictures_set_side_by_side_have_one_shape(self):
         seen = 0

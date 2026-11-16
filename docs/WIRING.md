@@ -4,7 +4,7 @@ This guide has two parts. The first is the bench build of version 1.0: seven con
 second is the plan for the whole radio, with its meters, its microphone and its second screen. I have built and tested
 the first part. The second part is a design that I have not built yet.
 
-The drawings name each part by its number in [the parts list](BOM.md).
+The drawings and the tables name each part by its label in [the parts list](BOM.md), from A1 to A21.
 
 ## How the parts connect
 
@@ -14,9 +14,9 @@ the meters' lamps.
 
 ![Every part of the radio and its link to the Raspberry Pi](images/wiring/overview.png)
 
-Version 1.0 connects the keypad, one display with its Qualia board, and the speaker. On the bench the Pi takes its
-power from its wall supply. The finished radio takes it from a computer, through the one USB-C cable that leaves the
-case.
+Version 1.0 connects the keypad, one display with its Qualia board, and the speaker. On the bench the power supply
+plugs straight into the Pi. In the finished radio it plugs into a socket on the back, and a switch cable inside takes
+the power on to the Pi. [Power](#power) shows that path.
 
 ## Version 1.0 on the bench
 
@@ -26,13 +26,13 @@ Unplug the Pi's power before you connect or move a wire.
 
 | From | To | With |
 |---|---|---|
-| The 5.1 V 3 A power supply | The Pi's USB-C port, marked POWER IN | The supply's own cable |
-| A USB-A port of the Pi | The USB-C port of the Qualia board (part 4) | The USB-A to USB-C cable (part 15) |
-| The bar display's ribbon (part 3) | The long connector of the Qualia board | The ribbon itself |
-| A USB-A port of the Pi | The keypad's USB-C port (part 7) | The keypad's cable |
-| The Pi's 3.5 mm jack, marked A/V | The speaker's 3.5 mm jack (part 11) | The audio cable (part 12) |
-| The Pi's pin 2 (5 V) | The speaker's pin **3-6V** | A lead (part 16) |
-| The Pi's pin 6 (ground) | The speaker's pin **GND** | A lead (part 16) |
+| The power supply (A2) | The Pi's USB-C port, marked POWER IN | The supply's own cable |
+| A USB-A port of the Pi | The USB-C port of the Qualia board (A6) | A USB-A to USB-C cable (A7) |
+| The bar display's ribbon (A5) | The long connector of the Qualia board | The ribbon itself |
+| A USB-A port of the Pi | The keypad's USB-C port (A8) | A USB-A to USB-C cable (A7), or the keypad's own cable |
+| The Pi's 3.5 mm jack, marked A/V | The speaker's 3.5 mm jack (A13) | The audio cable (A14) |
+| The Pi's pin 2 (5 V) | The speaker's pin **3-6V** | A female-to-female jumper wire (A19) |
+| The Pi's pin 6 (ground) | The speaker's pin **GND** | A female-to-female jumper wire (A19) |
 
 Any USB-A port of the Pi works for the screen board and for the keypad.
 
@@ -58,11 +58,11 @@ On the speaker, the pin marked **3-6V** is the one beside the audio jack and the
 end of the row. The two pins between them, PWM and LINE, stay free.
 
 <p>
-  <img src="images/pi-leads.jpg" width="49%" alt="Two leads on pins 2 and 6 of the Pi">
+  <img src="images/pi-leads.jpg" width="49%" alt="Two wires on pins 2 and 6 of the Pi">
   <img src="images/speaker-leads.jpg" width="49%" alt="Two wires on the speaker's 3-6V and GND pins">
 </p>
 
-Never connect 5 V to GND. Check both ends of each lead before you plug the power back in. When the speaker has power,
+Never connect 5 V to GND. Check both ends of each wire before you plug the power back in. When the speaker has power,
 the small light on its board comes on.
 
 ### The heat sinks
@@ -111,8 +111,8 @@ needle reaches the end of its scale.
 
 ### The microphone and its push-to-talk button
 
-The microphone keeps its 4-pin plug and plugs into a socket on the face (part 21). Behind the face, its signal
-reaches the USB sound adapter through the TRRS plug with screw terminals. The push-to-talk button closes a contact
+The microphone (A15) keeps its 4-pin plug and plugs into a socket on the face (A16). Behind the face, its signal
+reaches the USB sound adapter (A17) through the TRRS plug with screw terminals (A18). The push-to-talk button closes a contact
 that the Pi reads on pin 11.
 
 ![The microphone's four pins and where each one goes](images/wiring/microphone.png)
@@ -123,8 +123,8 @@ on my own microphone. Check yours with a multimeter before you solder the socket
 
 ### The sound and the lamps
 
-The speaker's two connections are those of version 1.0. The lamps of the meters need 12 V. The step-up cable makes
-them from the 5 V of pins 4 and 34, which it reaches through a USB-A socket on jumper wires. The red wire of that
+The speaker's two connections are those of version 1.0. The lamps of the meters need 12 V. The step-up cable (A11) makes
+them from the 5 V of pins 4 and 34, which it reaches through a USB-A socket on jumper wires (A12). The red wire of that
 socket goes to pin 4 and its black wire to pin 34. Its green and white wires stay free and insulated.
 
 ![The speaker's sound and power, and the 12 V of the meters' lamps](images/wiring/sound-and-lighting.png)
@@ -145,23 +145,44 @@ The two displays sit end to end behind the window, with their ribbons pointing o
 
 | From | To | Through |
 |---|---|---|
-| The computer | The Pi's USB-C port | The USB-C cable (part 14) |
-| The Pi, a USB-A port | The keypad | The keypad's cable (part 7) |
-| The Pi, a USB-A port | The sound adapter, then the TRRS plug | The adapter's cable (parts 9 and 10) |
-| The Pi, a USB-A port | A Qualia board, then the left display | A USB cable (part 15), then the ribbon |
-| The Pi, a USB-A port | A Qualia board, then the right display | A USB cable (part 19), then the ribbon |
+| The power supply (A2) | The socket on the back of the case (A20) | The supply's own cable |
+| The socket on the back | The switch cable (A21), then the Pi's USB-C port | The socket's own 30 cm cable |
+| The Pi, a USB-A port | The keypad | A USB-A to USB-C cable (A7) |
+| The Pi, a USB-A port | The sound adapter, then the TRRS plug | The adapter's cable (A17), then the plug (A18) |
+| The Pi, a USB-A port | A Qualia board, then the left display | A USB-A to USB-C cable (A7), then the ribbon |
+| The Pi, a USB-A port | A Qualia board, then the right display | A USB-A to USB-C cable (A7), then the ribbon |
 | The Pi, pins 16 and 14 | The left meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
 | The Pi, pins 18 and 20 | The right meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
 | The microphone socket, pin 1 | The TRRS plug's second ring, and the Pi's pin 9 | Wires soldered to the socket |
 | The microphone socket, pin 2 | The TRRS plug's sleeve | A wire soldered to the socket |
 | The microphone socket, pin 3 | The Pi's pin 11 | A wire soldered to the socket |
-| The Pi's 3.5 mm jack | The speaker | The audio cable (part 12) |
-| The Pi, pins 2 and 6 | The speaker, 5 V and ground | Jumper wires (part 16) |
-| The Pi, pins 4 and 34 | The lamps of the two meters | The USB-A socket on wires (part 20), then the 5 V to 12 V cable (part 13) |
+| The Pi's 3.5 mm jack | The speaker | The audio cable (A14) |
+| The Pi, pins 2 and 6 | The speaker, 5 V and ground | Jumper wires (A19) |
+| The Pi, pins 4 and 34 | The lamps of the two meters | The USB-A socket on wires (A12), then the 5 V to 12 V cable (A11) |
 
 ### Power
 
-The computer's USB-C port is meant to power the whole radio. Two figures frame that plan. The two lamps draw about
-110 mA at 12 V, going by their driver boards. A Pi 4 gives its four USB-A ports 1.2 A in all, going by Raspberry Pi's
-hardware documentation. Taking the lamps' power from the header leaves that 1.2 A to the two displays, the keypad
-and the sound adapter. I have not measured what the finished radio draws.
+One cable powers the whole radio: the cable of the power supply (A2). Nothing else leaves the case.
+
+| Step | Part | What happens |
+|---|---|---|
+| 1 | The power supply (A2) | 5.1 V and 3 A from the wall |
+| 2 | The socket on the back (A20) | The supply plugs in from outside. The socket's 30 cm cable takes the power inside. |
+| 3 | The switch cable (A21) | One click turns the whole radio on or off. Its red light shows when the power is on. |
+| 4 | The Pi (A1) | It takes the power on its USB-C port and passes it on to every other part |
+| 5 | The Pi's four USB-A ports | The two Qualia boards with their displays, the keypad and the sound adapter |
+| 6 | The Pi's header, pins 2 and 6 | The speaker |
+| 7 | The Pi's header, pins 4 and 34 | The step-up cable, through the USB-A socket on wires, then the meters' lamps at 12 V |
+
+The switch cable can sit in two places. On the supply's cable, outside the case, it works without any change to the
+case. Inside the case, between the socket and the Pi, its button has to reach the back through a hole, and the case
+has no hole or holder for it yet. The case has no hole for the socket either: it needs a round hole of 21.5 to 27 mm in
+the back. [The case](../print/README.md#what-is-not-drawn-yet) lists both.
+
+The supply gives 3 A. Two figures say how that splits. The two lamps draw about 110 mA at 12 V, going by their driver
+boards. A Pi 4 gives its four USB-A ports 1.2 A in all, going by Raspberry Pi's hardware documentation. Taking the
+lamps' power from the header leaves that 1.2 A to the two displays, the keypad and the sound adapter.
+
+I have not built this path yet, and I have not measured what the finished radio draws. The socket and the switch
+cable add about 60 cm of cable between the supply and the Pi. On the first start, run `vcgencmd get_throttled` on the
+Pi: `throttled=0x0` means the voltage held.

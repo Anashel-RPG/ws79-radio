@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: A security problem
+    url: https://github.com/Anashel-RPG/ws79-radio/security/advisories/new
+    about: Report it privately, so only the author sees it.
+  - name: The troubleshooting guide
+    url: https://github.com/Anashel-RPG/ws79-radio/blob/main/docs/TROUBLESHOOTING.md
+    about: The problems met during the build, with what fixed each one.
