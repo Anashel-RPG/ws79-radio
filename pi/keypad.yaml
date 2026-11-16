@@ -1,0 +1,14 @@
+# SinLoon 6-key keypad with a knob (CH57x, USB ID 1189:8890), for ch57x-keyboard-tool.
+# The keypad is mounted turned around in the WS-79, so the program maps F18 to the top-left key.
+orientation: normal
+rows: 2
+columns: 3
+knobs: 1
+layers:
+  - buttons:
+      - ["f13", "f14", "f15"]
+      - ["f16", "f17", "f18"]
+    knobs:
+      - ccw: "volumedown"
+        press: "mute"
+        cw: "volumeup"

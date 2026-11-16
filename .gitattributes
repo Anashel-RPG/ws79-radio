@@ -1,0 +1,13 @@
+# Files git must never treat as text.
+*.blend binary
+*.stl   binary
+*.3mf   binary
+*.wav   binary
+*.bmp   binary
+*.jpg   binary
+*.ttf   binary
+# Scripts keep Unix line endings on every system: the Pi runs install.sh as it is.
+*.sh    text eol=lf
+*.py    text eol=lf
+*.yaml  text eol=lf
+*.service text eol=lf
