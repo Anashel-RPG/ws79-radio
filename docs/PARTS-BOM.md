@@ -1,11 +1,11 @@
 # Parts
 
-The radio has 21 parts, labelled A1 to A21. The drawings in [WIRING.md](WIRING.md) and in
+The radio has 22 parts, labelled A1 to A22. None of them needs soldering. The drawings in [WIRING.md](WIRING.md) and in
 [the case plans](../print/README.md) call each part by its label. The last column says where the part stands in
 version 1.0: **wired** means it is part of the bench build, and **planned** means it is in the design and not connected
 yet.
 
-The references are the parts I ordered, except A12, A16, A19, A20 and A21, which I picked and have not ordered yet. Any
+The references are the parts I ordered, except A12, A16, A19, A20, A21 and A22, which I picked and have not ordered yet. Any
 equivalent part works, except where a note says otherwise. The sizes and the electrical values come from each maker's
 or seller's page, read between 10 and 16 November 2026. I have measured none of them myself. The openings of the case
 are another matter: they are measured in its print files.
@@ -29,12 +29,13 @@ are another matter: they are measured in its print files.
 | **A13** | <img src="images/parts/a13-speaker.jpg" width="96" alt="MonkMakes Amplified Speaker 2"> | [MonkMakes Amplified Speaker 2](#a13) | **×1** | The speaker, with its own amplifier | Wired |
 | **A14** | <img src="images/parts/a14-audio-cable.jpg" width="96" alt="3.5 mm audio cable, 30 cm, one end at a right angle"> | [3.5 mm audio cable, 30 cm, one end at a right angle](#a14) | **×1** | Takes the sound from the Pi's jack to the speaker | Wired |
 | **A15** | <img src="images/parts/a15-cb-microphone.jpg" width="96" alt="Uniden BC645 CB microphone"> | [Uniden BC645 CB microphone](#a15) | **×1** | The hand microphone and its push-to-talk button | Planned |
-| **A16** | <img src="images/parts/a16-microphone-socket.jpg" width="96" alt="4-pin microphone socket for the face"> | [4-pin microphone socket for the face](#a16) | **×1** | The socket that the microphone plugs into | Planned |
+| **A16** | <img src="images/parts/a16-microphone-socket.jpg" width="96" alt="GX16 4-pin socket with its wires attached"> | [GX16 4-pin socket with its wires attached](#a16) | **×1** | The socket that the microphone plugs into | Planned |
 | **A17** | <img src="images/parts/a17-usb-sound-adapter.jpg" width="96" alt="USB sound adapter with a microphone input"> | [USB sound adapter with a microphone input](#a17) | **×1** | Gives the Pi the microphone input it lacks | Planned |
 | **A18** | <img src="images/parts/a18-trrs-plug.jpg" width="96" alt="3.5 mm TRRS plug with screw terminals"> | [3.5 mm TRRS plug with screw terminals](#a18) | **×1** | Joins the microphone's wires to the sound adapter | Planned |
 | **A19** | <img src="images/parts/a19-jumper-wires.jpg" width="96" alt="Female-to-female jumper wires, 30 cm"> | [Female-to-female jumper wires, 30 cm](#a19) | **×1 strip of 20** | Join the Pi's pins to the speaker, the needles and the push-to-talk button | Wired |
 | **A20** | <img src="images/parts/a20-usb-c-panel-socket.jpg" width="96" alt="USB-C panel socket on a 30 cm cable"> | [USB-C panel socket on a 30 cm cable](#a20) | **×1** | The power socket on the back of the case | Planned |
 | **A21** | <img src="images/parts/a21-switch-cable.jpg" width="96" alt="USB-C cable with an on and off switch"> | [USB-C cable with an on and off switch](#a21) | **×1** | The master switch | Planned |
+| **A22** | <img src="images/parts/a22-lever-connectors.jpg" width="96" alt="Lever connectors for thin wire, 3 ways"> | [Lever connectors for thin wire, 3 ways](#a22) | **×2** | Join the microphone socket's wires to jumper wires, with no soldering | Planned |
 
 Five notes on these parts.
 
@@ -144,11 +145,11 @@ One sheet for each part, in the order of the list.
 |---|---|
 | <img src="images/parts/a15-cb-microphone.jpg" width="200" alt="Uniden BC645 CB microphone"> | The hand microphone and its push-to-talk button. It plugs into the socket A16 on the face.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B008CLIB5K<br>**Connects:** Its plug goes into the socket A16, direct.<br>**Plug:** 4 pins, female, wired the Cobra and Uniden way<br>**Cord:** Coiled, 2.4 m<br>**Button:** Push to talk |
 
-### <a id="a16"></a>A16. 4-pin microphone socket for the face
+### <a id="a16"></a>A16. GX16 4-pin socket with its wires attached
 
 | | |
 |---|---|
-| <img src="images/parts/a16-microphone-socket.jpg" width="200" alt="4-pin microphone socket for the face"> | The socket on the face that the microphone A15 plugs into. Cobra and Uniden CB radios have the same socket. Behind the face, its pins 1 and 2 go to the plug A18, and its pins 1 and 3 go to the Pi's header for the push-to-talk button.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Workman C-4P. I have not ordered it yet.<br>**Connects:** Pins 1 and 2: to the screw terminals of A18, with A19 wires soldered at the socket. Pins 1 and 3: to pins 9 and 11 of the Pi, with A19 wires soldered at the socket.<br>**Pins:** 4, male<br>**Body:** Metal, with a nut and a washer<br>**Hole:** The face has a 16.2 mm hole for it. Workman does not give the hole size: hold the socket in the hole before you print the face.<br>**Wires:** Its pins take soldered wires. It is the one part of the radio that needs a soldering iron.<br>**Seller's page:** https://cbradiosupply.com/products/cb-radio-accessories-workman-c-4p-replacement-4-pin-cb-radio-microphone-panel-jack-mount |
+| <img src="images/parts/a16-microphone-socket.jpg" width="200" alt="GX16 4-pin socket with its wires attached"> | The socket on the face that the microphone A15 plugs into. It comes with four wires already attached at its back, so nothing is soldered. The wires go to the plug A18 and, through the lever connectors A22, to the Pi.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** GX16, 4 Pin Male-Open, on Amazon B0CWF1H262. I have not ordered it yet.<br>**Connects:** Its wire from pin 2 goes under a screw of A18, direct. Its wires from pins 1 and 3 each go into a lever connector A22, which joins them to A19 wires for pins 9 and 11 of the Pi. Pin 1 also goes on to A18 through a short wire. Its pin 4 wire is not used.<br>**Pins:** 4, male, 16 mm round body with a nut<br>**Wires:** 4 wires of 20 AWG, 20 cm, attached and sealed at the back<br>**Fit:** Sellers list the GX16 4-pin as the CB microphone connector. I have not tried it with the BC645 yet: plug the microphone in before you mount the socket.<br>**Colours:** The listing does not say which colour goes to which pin. Find out with a multimeter set to continuity, one probe on a pin and the other on each wire.<br>**Hole:** 16 mm. The face has a 16.2 mm hole for it. |
 
 ### <a id="a17"></a>A17. USB sound adapter with a microphone input
 
@@ -160,13 +161,13 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2: **the radio uses 1**.<br>**Connects:** Plugs into the jack of A17, direct. The wires from A16 go into its screw terminals.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
+| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2: **the radio uses 1**.<br>**Connects:** Plugs into the jack of A17, direct. The pin 2 wire of A16 and a short wire from the pin 1 lever connector go under its screws.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
 
 ### <a id="a19"></a>A19. Female-to-female jumper wires, 30 cm
 
 | | |
 |---|---|
-| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped.<br><br>**Quantity:** ×1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949. I have not ordered it yet.<br>**Connects:** 12 of the 20: two for the speaker, three for each needle, two for the push-to-talk button, two from the microphone socket to A18.<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
+| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped.<br><br>**Quantity:** ×1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949. I have not ordered it yet.<br>**Connects:** 11 of the 20: two for the speaker, three for each needle, two for the push-to-talk button, and one cut short from the pin 1 lever connector to A18.<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
 
 ### <a id="a20"></a>A20. USB-C panel socket on a 30 cm cable
 
@@ -179,6 +180,12 @@ One sheet for each part, in the order of the list.
 | | |
 |---|---|
 | <img src="images/parts/a21-switch-cable.jpg" width="200" alt="USB-C cable with an on and off switch"> | The master switch: one press cuts the power of the whole radio.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** PiShop, Power Switch for Raspberry Pi 4, USB-C. I have not ordered it yet.<br>**Connects:** From the cable of A20 to the Pi's USB-C port, direct.<br>**Ends:** USB-C female, where the cable of A20 plugs in, to USB-C male, which goes into the Pi<br>**Length:** 27 cm<br>**Switch:** A button in the middle of the cable<br>**Use:** Made for the Raspberry Pi 4 with its usual supply. It passes power only, no data. It does not work with a Raspberry Pi 5.<br>**Seller's page:** https://www.pishop.ca/product/power-switch-for-raspberry-pi-4-usb-c/ |
+
+### <a id="a22"></a>A22. Lever connectors for thin wire, 3 ways
+
+| | |
+|---|---|
+| <img src="images/parts/a22-lever-connectors.jpg" width="200" alt="Lever connectors for thin wire, 3 ways"> | Each lever opens a slot: push a stripped wire in and close the lever. Two of them join the wires of the socket A16 to A19 jumper wires, whose other end slides onto a pin of the Pi.<br><br>**Quantity:** ×2<br>**In version 1.0:** planned<br>**Reference:** XHF2018 3-way lever connectors, Amazon B07H76HDBL, a pack of 50: **the radio uses 2**. I have not ordered them yet.<br>**Connects:** One joins the pin 3 wire of A16 to an A19 wire for Pi pin 11. The other joins the pin 1 wire to an A19 wire for Pi pin 9 and to a short wire for A18.<br>**Wire:** 0.08 to 2.5 mm², which is 28 to 12 AWG. Wago 221 connectors start at 24 AWG and do not hold the thin A19 wires.<br>**Ways:** 3 slots, joined inside |
 
 ## Where I bought them, in Canada
 
@@ -203,12 +210,13 @@ world.
 | **A13** | PiShop | <https://www.pishop.ca/product/amplified-speaker-2-for-raspberry-pi-arduino/> |
 | **A14** | Amazon.ca | <https://www.amazon.ca/dp/B08F2GRHXC> |
 | **A15** | Amazon.ca | <https://www.amazon.ca/dp/B008CLIB5K> |
-| **A16** | CB Radio Supply, in the United States, not bought yet | <https://cbradiosupply.com/products/cb-radio-accessories-workman-c-4p-replacement-4-pin-cb-radio-microphone-panel-jack-mount> |
+| **A16** | Amazon.com, not bought yet | <https://www.amazon.com/dp/B0CWF1H262> |
 | **A17** | Amazon.ca | <https://www.amazon.ca/dp/B07RS11M1T> |
 | **A18** | Amazon.ca | <https://www.amazon.ca/dp/B08QFHHJ3Z> |
 | **A19** | Digi-Key, not bought yet | <https://www.digikey.ca/en/products/result?keywords=adafruit%201949> |
 | **A20** | Digi-Key, not bought yet | <https://www.digikey.ca/en/products/result?keywords=adafruit%204218> |
 | **A21** | PiShop, not bought yet | <https://www.pishop.ca/product/power-switch-for-raspberry-pi-4-usb-c/> |
+| **A22** | Amazon.com, not bought yet | <https://www.amazon.com/dp/B07H76HDBL> |
 
 ## Where the pictures come from
 

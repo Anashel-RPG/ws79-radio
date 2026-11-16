@@ -11,6 +11,8 @@ These changes are in the guides only. The programs are those of 1.0.0.
   switch cable that is the master switch (A21). The USB-C cable to a computer is no longer in the list.
 - The microphone socket for the face has a reference, the Workman C-4P (A16), and every part has a picture.
 - The wiring guide explains the power path, and the wiring drawings use the new labels.
+- Nothing needs soldering. The microphone socket A16 is now a GX16 socket sold with its wires attached, and two lever
+  connectors (A22) join its push-to-talk wires to jumper wires.
 - The parts list is now `docs/PARTS-BOM.md`. It ends with the Canadian stores where I bought each part, and the master
   switch A21 is now one sold in Canada.
 - The wiring drawings show a picture of every part, the Pi included. The speaker and the meters' lamps have a drawing

@@ -127,7 +127,7 @@ lists the problems I ran into with their fixes.
 
 | Guide | What it holds |
 |---|---|
-| [Parts](docs/PARTS-BOM.md) | The 21 parts of the radio, A1 to A21, with a quantity, a picture and a sheet for each |
+| [Parts](docs/PARTS-BOM.md) | The 22 parts of the radio, A1 to A22, with a quantity, a picture and a sheet for each |
 | [Wiring](docs/WIRING.md) | The bench build connection by connection, the pins of the Pi, and the wiring plan of the whole radio |
 | [Setup](docs/SETUP.md) | The card, the first start and the installer, step by step |
 | [How the radio works](docs/HOW-IT-WORKS.md) | The two programs, the messages between them, and how to change the sounds, the channels and the colours |

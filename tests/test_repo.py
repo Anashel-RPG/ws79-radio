@@ -114,10 +114,10 @@ def picture_size(path):
 class Guides(unittest.TestCase):
     """The guides and what they show: the parts list, the pictures set side by side, the case plans."""
 
-    def test_the_parts_list_has_21_parts_each_with_its_label_quantity_and_sheet(self):
+    def test_the_parts_list_has_22_parts_each_with_its_label_quantity_and_sheet(self):
         text = read("docs", "PARTS-BOM.md")
         rows = re.findall(r"^\| \*\*(A\d+)\*\* \| <img [^|]*\| \[[^]]+\]\(#(a\d+)\) \| ([^|]+) \|", text, re.M)
-        self.assertEqual([r[0] for r in rows], ["A%d" % n for n in range(1, 22)])
+        self.assertEqual([r[0] for r in rows], ["A%d" % n for n in range(1, 23)])
         for label, anchor, qty in rows:
             self.assertEqual(anchor, label.lower())
             self.assertRegex(qty.strip(), r"^\*\*×\d", "%s has no quantity such as ×2" % label)
@@ -130,7 +130,7 @@ class Guides(unittest.TestCase):
             text = read(*name)
             self.assertNotRegex(text, r"\(parts? \d", "%s still uses the old part numbers" % name[-1])
             for n in re.findall(r"\bA(\d+)\)", text):
-                self.assertTrue(1 <= int(n) <= 21, "%s names part A%s" % (name[-1], n))
+                self.assertTrue(1 <= int(n) <= 22, "%s names part A%s" % (name[-1], n))
 
     def test_pictures_set_side_by_side_have_one_shape(self):
         seen = 0

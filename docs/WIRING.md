@@ -4,7 +4,7 @@ This guide has two parts. The first is the bench build of version 1.0: seven con
 second is the plan for the whole radio, with its meters, its microphone and its second screen. I have built and tested
 the first part. The second part is a design that I have not built yet.
 
-The drawings and the tables name each part by its label in [the parts list](PARTS-BOM.md), from A1 to A21.
+The drawings and the tables name each part by its label in [the parts list](PARTS-BOM.md), from A1 to A22.
 
 ## How the parts connect
 
@@ -134,15 +134,17 @@ wire holds on the meter's terminals. If they are screws, cut one end of the wire
 
 ### The microphone and its push-to-talk button
 
-The microphone (A15) keeps its 4-pin plug and plugs into a socket on the face (A16). Behind the face, its signal
-reaches the USB sound adapter (A17) through the TRRS plug with screw terminals (A18). The push-to-talk button closes a contact
-that the Pi reads on pin 11.
+The microphone (A15) keeps its 4-pin plug and plugs into a GX16 socket on the face (A16). The socket comes with its four
+wires attached at the back, so nothing is soldered. The sound wires go under the screws of the TRRS plug (A18), which
+goes into the USB sound adapter (A17). The push-to-talk wires go into two lever connectors (A22), which join them to
+jumper wires for pins 9 and 11 of the Pi.
 
 ![The microphone's four pins and where each one goes](images/wiring/microphone.png)
 
 The four pins follow the usual wiring of Cobra and Uniden microphones: pin 1 is the ground and the shield, pin 2 the
 microphone's signal, pin 3 transmit and pin 4 receive. I read that wiring on a reference page and have not checked it
-on my own microphone. Check yours with a multimeter before you solder the socket.
+on my own microphone. Before you connect anything, find which wire colour goes to which pin with a multimeter set to
+continuity, and plug the microphone into the socket once to check that it fits.
 
 ### The speaker
 
@@ -183,9 +185,9 @@ The two displays sit end to end behind the window, with their ribbons pointing o
 | The Pi, a USB-A port | A Qualia board, then the right display | A USB-A to USB-C cable (A7), then the ribbon |
 | The Pi, pins 16 and 14 | The left meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
 | The Pi, pins 18 and 20 | The right meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
-| The microphone socket, pin 1 | The TRRS plug's second ring, and the Pi's pin 9 | Wires soldered to the socket |
-| The microphone socket, pin 2 | The TRRS plug's sleeve | A wire soldered to the socket |
-| The microphone socket, pin 3 | The Pi's pin 11 | A wire soldered to the socket |
+| The microphone socket, pin 1 | The TRRS plug's second ring, and the Pi's pin 9 | Its wire into a lever connector (A22), then a short wire to A18 and an A19 wire to the Pi |
+| The microphone socket, pin 2 | The TRRS plug's sleeve | Its wire, under a screw of A18 |
+| The microphone socket, pin 3 | The Pi's pin 11 | Its wire into a lever connector (A22), then an A19 wire |
 | The Pi's 3.5 mm jack | The speaker | The audio cable (A14) |
 | The Pi, pins 2 and 6 | The speaker, 5 V and ground | Jumper wires (A19) |
 | The Pi, pins 4 and 34 | The lamps of the two meters | The USB-A socket on wires (A12), then the 5 V to 12 V cable (A11) |
