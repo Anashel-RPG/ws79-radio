@@ -102,13 +102,13 @@ The silver box in the corner is the Wi-Fi shield. Nothing goes on it.
 The numbers follow the physical numbering of the header. The drawing looks at the Pi from above, with its USB ports
 on the right.
 
-![The ten pins the radio uses on the Pi's 40-pin header](images/wiring/pins.png)
+![The nine pins the radio uses on the Pi's 40-pin header](images/wiring/pins.png)
 
 | Pins | Use | In version 1.0 |
 |---|---|---|
 | 2 (5 V) and 6 (ground) | The speaker's power | Wired |
 | 4 (5 V) and 34 (ground) | The meters' lamps, through the USB-A socket on wires and the 5 V to 12 V cable | Planned |
-| 11 (GPIO 17) and 9 (ground) | The microphone's push-to-talk button | Planned |
+| 11 (GPIO 17) | The microphone's push-to-talk button. Its ground comes through the sound adapter. | Planned |
 | 16 (GPIO 23) and 14 (ground) | The SIGNAL needle, the left meter | Planned |
 | 18 (GPIO 24) and 20 (ground) | The AUDIO needle, the right meter | Planned |
 
@@ -135,18 +135,22 @@ wire holds on the meter's terminals. If they are screws, cut one end of the wire
 ### The microphone and its push-to-talk button
 
 The microphone (A15) keeps its 4-pin plug and plugs into a GX16 socket on the face (A16). The socket comes with its four
-wires attached at the back, so nothing is soldered. The sound wires go under the screws of the TRRS plug (A18), which
-goes into the USB sound adapter (A17). The push-to-talk wires go into two lever connectors (A22), which join them to
-jumper wires for pins 9 and 11 of the Pi.
+wires attached at the back, so nothing is soldered. Pins 1 and 2 go under two screws of the TRRS plug (A18), which goes
+into the USB sound adapter (A17). Pin 3, the push-to-talk button, goes into a lever connector (A22), which joins it to a
+jumper wire for pin 11 of the Pi. Pin 4 is not used.
+
+Pin 1 is the ground and needs one wire only. The sound adapter already joins A18's screw G to the Pi's ground through
+its USB cable, so the button reaches the Pi's ground that way.
 
 ![The microphone's four pins and where each one goes](images/wiring/microphone.png)
 
 The four pins follow the usual wiring of Cobra and Uniden microphones: pin 1 is the ground and the shield, pin 2 the
 microphone's signal, pin 3 transmit and pin 4 receive. I read that wiring on a reference page and have not checked it
-on my own microphone. Before you connect anything, find which wire colour goes to which pin with a multimeter set to
-continuity, and plug the microphone into the socket once to check that it fits.
+on my own microphone. The socket's listing does not say which wire colour goes to which pin. I check both on my build
+when the socket arrives and write the colours in the parts list. Until then, plug the microphone into the socket once
+before you mount it, to check that it fits.
 
-The same wiring, step by step. W1, W2 and W3 are three wires taken from the A19 strip.
+The same wiring, step by step.
 
 ![The microphone's wiring in eight steps, from finding each wire's pin to plugging the sound adapter into the Pi](images/wiring/microphone-steps.png)
 
@@ -189,8 +193,8 @@ The two displays sit end to end behind the window, with their ribbons pointing o
 | The Pi, a USB-A port | A Qualia board, then the right display | A USB-A to USB-C cable (A7), then the ribbon |
 | The Pi, pins 16 and 14 | The left meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
 | The Pi, pins 18 and 20 | The right meter, + and - terminals | Jumper wires, with a potentiometer on the + terminal |
-| The microphone socket, pin 1 | The TRRS plug's second ring, and the Pi's pin 9 | Its wire into a lever connector (A22), then a short wire to A18 and an A19 wire to the Pi |
-| The microphone socket, pin 2 | The TRRS plug's sleeve | Its wire, under a screw of A18 |
+| The microphone socket, pin 1 | The TRRS plug's second ring | Its wire, under screw G of A18 |
+| The microphone socket, pin 2 | The TRRS plug's sleeve | Its wire, under screw M of A18 |
 | The microphone socket, pin 3 | The Pi's pin 11 | Its wire into a lever connector (A22), then an A19 wire |
 | The Pi's 3.5 mm jack | The speaker | The audio cable (A14) |
 | The Pi, pins 2 and 6 | The speaker, 5 V and ground | Jumper wires (A19) |
