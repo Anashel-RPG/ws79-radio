@@ -144,13 +144,20 @@ The four pins follow the usual wiring of Cobra and Uniden microphones: pin 1 is 
 microphone's signal, pin 3 transmit and pin 4 receive. I read that wiring on a reference page and have not checked it
 on my own microphone. Check yours with a multimeter before you solder the socket.
 
-### The sound and the lamps
+### The speaker
 
-The speaker's two connections are those of version 1.0. The lamps of the meters need 12 V. The step-up cable (A11) makes
-them from the 5 V of pins 4 and 34, which it reaches through a USB-A socket on jumper wires (A12). The red wire of that
+The speaker's two connections are those of version 1.0: its sound through the audio cable (A14), its power through two
+A19 wires.
+
+![The speaker: its sound from the Pi's jack, its power from pins 2 and 6](images/wiring/speaker.png)
+
+### The meters' lamps
+
+Each meter has a lamp behind its dial, apart from its needle. The lamps need 12 V. The step-up cable (A11) makes them
+from the 5 V of pins 4 and 34, which it reaches through a USB-A socket on jumper wires (A12). The red wire of that
 socket goes to pin 4 and its black wire to pin 34. Its green and white wires stay free and insulated.
 
-![The speaker's sound and power, and the 12 V of the meters' lamps](images/wiring/sound-and-lighting.png)
+![The lamps of the two meters: pins 4 and 34, the USB-A socket on wires, the step-up cable, then the meters](images/wiring/lamps.png)
 
 ### The two displays and the keypad
 
