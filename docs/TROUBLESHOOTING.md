@@ -78,7 +78,7 @@ The Pi's jack sometimes starts at a low level. The radio program sets it to full
 ### A clip slips off or touches two pins of the speaker
 
 Crocodile clips are wider than the gap between the pins, and they do not hold. Use female-to-female jumper wires
-(A19 in [the parts list](BOM.md)): one socket slides onto the Pi's pin and the other onto the speaker's pin.
+(A19 in [the parts list](PARTS-BOM.md)): one socket slides onto the Pi's pin and the other onto the speaker's pin.
 
 ## The keypad
 

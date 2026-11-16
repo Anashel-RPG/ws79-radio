@@ -9,7 +9,7 @@ every opening of its face, how each part is meant to print, and what is still mi
 
 ![The front of the radio with its seven parts marked and its width](../images/renders/ws79-front-annotated.jpg)
 
-| Mark | On the face | Part in [the parts list](../docs/BOM.md) |
+| Mark | On the face | Part in [the parts list](../docs/PARTS-BOM.md) |
 |---|---|---|
 | 1 | The window of the two bar displays | 3 |
 | 2 | The speaker grille | 11, behind the face |

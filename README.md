@@ -7,7 +7,7 @@ some of them with the Stinger OS app. This repository holds what I use to build 
 the program for the screen, a utility that prepares the Pi's card from a Mac or a PC, the parts list, the wiring, and
 the files for the case.
 
-**[Parts](docs/BOM.md) · [Wiring](docs/WIRING.md) · [Setup](docs/SETUP.md) · [How it works](docs/HOW-IT-WORKS.md) ·
+**[Parts](docs/PARTS-BOM.md) · [Wiring](docs/WIRING.md) · [Setup](docs/SETUP.md) · [How it works](docs/HOW-IT-WORKS.md) ·
 [The case](print/README.md) · [Troubleshooting](docs/TROUBLESHOOTING.md) ·
 [Contributing](.github/CONTRIBUTING.md)**
 
@@ -95,7 +95,7 @@ This is a hobby build at low voltage. Check your wiring before you power it, and
 
 ## What you need
 
-- The parts marked **Wired** in [the parts list](docs/BOM.md). Nothing needs soldering.
+- The parts marked **Wired** in [the parts list](docs/PARTS-BOM.md). Nothing needs soldering.
 - A computer with Python 3.8 or later and a reader for the microSD card.
 - [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to write the system to the card.
 
@@ -127,7 +127,7 @@ lists the problems I ran into with their fixes.
 
 | Guide | What it holds |
 |---|---|
-| [Parts](docs/BOM.md) | The 21 parts of the radio, A1 to A21, with a quantity, a picture and a sheet for each |
+| [Parts](docs/PARTS-BOM.md) | The 21 parts of the radio, A1 to A21, with a quantity, a picture and a sheet for each |
 | [Wiring](docs/WIRING.md) | The bench build connection by connection, the pins of the Pi, and the wiring plan of the whole radio |
 | [Setup](docs/SETUP.md) | The card, the first start and the installer, step by step |
 | [How the radio works](docs/HOW-IT-WORKS.md) | The two programs, the messages between them, and how to change the sounds, the channels and the colours |

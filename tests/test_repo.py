@@ -115,7 +115,7 @@ class Guides(unittest.TestCase):
     """The guides and what they show: the parts list, the pictures set side by side, the case plans."""
 
     def test_the_parts_list_has_21_parts_each_with_its_label_quantity_and_sheet(self):
-        text = read("docs", "BOM.md")
+        text = read("docs", "PARTS-BOM.md")
         rows = re.findall(r"^\| \*\*(A\d+)\*\* \| <img [^|]*\| \[[^]]+\]\(#(a\d+)\) \| ([^|]+) \|", text, re.M)
         self.assertEqual([r[0] for r in rows], ["A%d" % n for n in range(1, 22)])
         for label, anchor, qty in rows:

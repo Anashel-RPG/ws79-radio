@@ -4,7 +4,7 @@ This guide has two parts. The first is the bench build of version 1.0: seven con
 second is the plan for the whole radio, with its meters, its microphone and its second screen. I have built and tested
 the first part. The second part is a design that I have not built yet.
 
-The drawings and the tables name each part by its label in [the parts list](BOM.md), from A1 to A21.
+The drawings and the tables name each part by its label in [the parts list](PARTS-BOM.md), from A1 to A21.
 
 ## How the parts connect
 
@@ -20,7 +20,7 @@ the power on to the Pi. [Power](#power) shows that path.
 
 ## Every part and every link
 
-Each link is marked one of two ways. A yellow chip names the part from [the parts list](BOM.md) that makes the link.
+Each link is marked one of two ways. A yellow chip names the part from [the parts list](PARTS-BOM.md) that makes the link.
 "direct" means the two plug into each other with nothing between them.
 
 ![Every part of the finished radio, and every link between them](images/wiring/every-link.png)
@@ -33,7 +33,7 @@ Five parts are there only to make a link, and the drawing shows where each one s
 | A17, the USB sound adapter | The Pi has a sound output and no microphone input. A17 plugs into a USB-A port and adds one. |
 | A18, the TRRS plug with screws | It is the plug that goes into A17's jack. The two sound wires of the microphone socket A16 are screwed into it. |
 | A12, the USB-A socket on wires | The Pi's four USB-A ports are taken: two Qualia boards, the keypad and A17. A12 is a fifth socket, for power only, fed by pins 4 and 34 of the header. |
-| A11, the step-up cable | The meters' lamps need 12 V. A11 plugs into A12, takes its 5 V and gives 12 V on two wires that go to the lamps. It comes in a pack of 3, and the radio uses one. |
+| A11, the step-up cable | The meters' lamps need 12 V. A11 plugs into A12, takes its 5 V and gives 12 V on two wires that go to the lamps. It comes in a pack of 3: **the radio uses 1**. |
 
 No cable goes to a computer. The radio works alone and joins the network over the Pi's Wi-Fi.
 
@@ -198,7 +198,7 @@ One cable powers the whole radio: the cable of the power supply (A2). Nothing el
 |---|---|---|
 | 1 | The power supply (A2) | 5.1 V and 3 A from the wall |
 | 2 | The socket on the back (A20) | The supply plugs in from outside. The socket's 30 cm cable takes the power inside. |
-| 3 | The switch cable (A21) | One click turns the whole radio on or off. Its red light shows when the power is on. |
+| 3 | The switch cable (A21) | One press of its button turns the whole radio on or off. |
 | 4 | The Pi (A1) | It takes the power on its USB-C port and passes it on to every other part |
 | 5 | The Pi's four USB-A ports | The two Qualia boards with their displays, the keypad and the sound adapter |
 | 6 | The Pi's header, pins 2 and 6 | The speaker |

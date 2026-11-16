@@ -5,7 +5,7 @@ The radio has 21 parts, labelled A1 to A21. The drawings in [WIRING.md](WIRING.m
 version 1.0: **wired** means it is part of the bench build, and **planned** means it is in the design and not connected
 yet.
 
-The references are the parts I ordered, except A16, A20 and A21, which I picked and have not ordered yet. Any
+The references are the parts I ordered, except A12, A16, A19, A20 and A21, which I picked and have not ordered yet. Any
 equivalent part works, except where a note says otherwise. The sizes and the electrical values come from each maker's
 or seller's page, read between 10 and 16 November 2026. I have measured none of them myself. The openings of the case
 are another matter: they are measured in its print files.
@@ -15,7 +15,7 @@ are another matter: they are measured in its print files.
 | No. | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Part | Qty | What it does | In version 1.0 |
 |---|---|---|---|---|---|
 | **A1** | <img src="images/parts/a01-raspberry-pi-4.jpg" width="96" alt="Raspberry Pi 4 Model B, 1 GB"> | [Raspberry Pi 4 Model B, 1 GB](#a1) | **×1** | Runs the radio program, plays the sounds and drives the screens | Wired |
-| **A2** | <img src="images/parts/a02-power-supply.jpg" width="96" alt="USB-C power supply, 5.1 V 3 A"> | [USB-C power supply, 5.1 V 3 A](#a2) | **×1, in the A1 kit** | Powers the whole radio through one cable | Wired |
+| **A2** | <img src="images/parts/a02-power-supply.jpg" width="96" alt="USB-C power supply, 5.1 V 3 A"> | [USB-C power supply, 5.1 V 3 A](#a2) | **×1, came with A1** | Powers the whole radio through one cable | Wired |
 | **A3** | <img src="images/parts/a03-microsd-card.jpg" width="96" alt="microSD card, 32 GB"> | [microSD card, 32 GB](#a3) | **×1** | Holds Raspberry Pi OS and the radio program | Wired |
 | **A4** | <img src="images/parts/a04-sd-adapter.jpg" width="96" alt="microSD to SD adapter"> | [microSD to SD adapter](#a4) | **×1** | Lets a computer's SD slot write the card | Wired |
 | **A5** | <img src="images/parts/a05-bar-display.jpg" width="96" alt="3.7 in bar display, 240 × 960 pixels"> | [3.7 in bar display, 240 × 960 pixels](#a5) | **×2** | Shows the frequency, the channel and the spectrum. The two sit end to end behind the window | One wired, one planned |
@@ -44,8 +44,8 @@ Five notes on these parts.
   240 × 960 bar.
 - **Use wires with a socket at each end on the Pi's pins.** The bench build first used crocodile clip leads. Their
   clips are too wide for pins that sit 2.54 mm apart and they did not hold, so A19 replaces them.
-- **A2 comes with A1 in the kit.** The Pi kit I ordered has its power supply in the box. Buy A2 only if your Pi
-  came without one. The radio needs one supply.
+- **A2 comes with A1 in the kit.** My Pi came with its power supply in the same order. Buy A2 only if your Pi
+  comes without one. The radio needs one supply.
 - **One cable powers everything.** The supply A2 plugs into the socket A20 on the back. Inside, the switch cable A21
   takes the power to the Pi, and the Pi powers every other part through its USB ports and its header.
   [WIRING.md](WIRING.md#power) shows the path.
@@ -58,13 +58,13 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a01-raspberry-pi-4.jpg" width="200" alt="Raspberry Pi 4 Model B, 1 GB"> | Runs the radio program, plays the sounds and drives the screens. Every other part takes its power from it.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** PiShop 1GB-9002, a kit with a power supply (A2) and 3 heat sinks<br>**Connects:** Every other part connects to it. [The diagram](WIRING.md#every-part-and-every-link) shows each link.<br>**Processor:** Broadcom BCM2711, four Cortex-A72 cores<br>**Memory:** 1 GB<br>**Ports:** 2 USB 3.0, 2 USB 2.0, USB-C for power<br>**Header:** 40 pins<br>**Audio:** 3.5 mm jack, 4 poles<br>**Board:** 85 × 56 mm<br>**Maker's page:** https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf |
+| <img src="images/parts/a01-raspberry-pi-4.jpg" width="200" alt="Raspberry Pi 4 Model B, 1 GB"> | Runs the radio program, plays the sounds and drives the screens. Every other part takes its power from it.<br><br>**Quantity:** ×1<br>**In version 1.0:** wired<br>**Reference:** PiShop 1GB-9002, bought with a power supply (A2) and 3 heat sinks<br>**Connects:** Every other part connects to it. [The diagram](WIRING.md#every-part-and-every-link) shows each link.<br>**Processor:** Broadcom BCM2711, four Cortex-A72 cores<br>**Memory:** 1 GB<br>**Ports:** 2 USB 3.0, 2 USB 2.0, USB-C for power<br>**Header:** 40 pins<br>**Audio:** 3.5 mm jack, 4 poles<br>**Board:** 85 × 56 mm<br>**Maker's page:** https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf |
 
 ### <a id="a2"></a>A2. USB-C power supply, 5.1 V 3 A
 
 | | |
 |---|---|
-| <img src="images/parts/a02-power-supply.jpg" width="200" alt="USB-C power supply, 5.1 V 3 A"> | Powers the whole radio. Its cable is the only one that leaves the case: it plugs into the socket A20 on the back.<br><br>**Quantity:** ×1, in the A1 kit<br>**In version 1.0:** wired<br>**Reference:** The supply that came in the box with A1. Raspberry Pi's own 15 W USB-C supply is the model to buy on its own, and the one the switch cable A21 is made for.<br>**Connects:** Its cable plugs into the socket A20, direct. On the bench it plugs straight into the Pi.<br>**Output:** 5.1 V, 3 A<br>**Plug:** USB-C. On Raspberry Pi's own supply it ends a 1.5 m cable that does not come off.<br>**Maker's page:** https://www.raspberrypi.com/products/type-c-power-supply/ |
+| <img src="images/parts/a02-power-supply.jpg" width="200" alt="USB-C power supply, 5.1 V 3 A"> | Powers the whole radio. Its cable is the only one that leaves the case: it plugs into the socket A20 on the back.<br><br>**Quantity:** ×1, came with A1<br>**In version 1.0:** wired<br>**Reference:** The supply that came with A1 in my order. Raspberry Pi's own 15 W USB-C supply is the model to buy on its own, and the one the switch cable A21 is made for.<br>**Connects:** Its cable plugs into the socket A20, direct. On the bench it plugs straight into the Pi.<br>**Output:** 5.1 V, 3 A<br>**Plug:** USB-C. On Raspberry Pi's own supply it ends a 1.5 m cable that does not come off.<br>**Maker's page:** https://www.raspberrypi.com/products/type-c-power-supply/ |
 
 ### <a id="a3"></a>A3. microSD card, 32 GB
 
@@ -118,13 +118,13 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a11-step-up-cable.jpg" width="200" alt="USB 5 V to 12 V step-up cable"> | The meters' lamps need 12 V and the Pi only has 5 V. This cable takes 5 V on its USB-A plug and gives 12 V on two bare wires, red for + and black for −. Its plug goes into the socket A12, and its two wires go to the lamps of the two meters.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** SinLoon, Amazon B0F2YKGS25. It comes in a pack of 3.<br>**Connects:** Its USB plug goes into A12, direct. Its red and black wires go to the lamps of A9, direct.<br>**Input:** USB-A plug, 5 V, 2 A at most<br>**Output:** 12 V, 0.8 A at most, on bare wires<br>**Length:** 88 cm |
+| <img src="images/parts/a11-step-up-cable.jpg" width="200" alt="USB 5 V to 12 V step-up cable"> | The meters' lamps need 12 V and the Pi only has 5 V. This cable takes 5 V on its USB-A plug and gives 12 V on two bare wires, red for + and black for −. Its plug goes into the socket A12, and its two wires go to the lamps of the two meters.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** SinLoon, Amazon B0F2YKGS25. It comes in a pack of 3: **the radio uses 1**.<br>**Connects:** Its USB plug goes into A12, direct. Its red and black wires go to the lamps of A9, direct.<br>**Input:** USB-A plug, 5 V, 2 A at most<br>**Output:** 12 V, 0.8 A at most, on bare wires<br>**Length:** 88 cm |
 
 ### <a id="a12"></a>A12. USB-A socket on four jumper wires
 
 | | |
 |---|---|
-| <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="200" alt="USB-A socket on four jumper wires"> | The four USB ports of the Pi are taken by the two Qualia boards, the keypad and the sound adapter. This short cable gives the step-up cable A11 a fifth USB-A socket, fed from two pins of the Pi's header. Only its red and black wires are used.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4449<br>**Connects:** Its red and black ends slide onto pins 4 and 34 of the Pi, direct. A11 plugs into its socket.<br>**Socket:** USB-A female, on a 30 cm cable<br>**Wires:** Four female ends spaced 2.54 mm. Red is 5 V and goes to pin 4. Black is ground and goes to pin 34. Green and white are the data lines and stay free, each one insulated.<br>**Maker's page:** https://www.adafruit.com/product/4449 |
+| <img src="images/parts/a12-usb-a-socket-on-wires.jpg" width="200" alt="USB-A socket on four jumper wires"> | The four USB ports of the Pi are taken by the two Qualia boards, the keypad and the sound adapter. This short cable gives the step-up cable A11 a fifth USB-A socket, fed from two pins of the Pi's header. Only its red and black wires are used.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Adafruit 4449. I have not ordered it yet.<br>**Connects:** Its red and black ends slide onto pins 4 and 34 of the Pi, direct. A11 plugs into its socket.<br>**Socket:** USB-A female, on a 30 cm cable<br>**Wires:** Four female ends spaced 2.54 mm. Red is 5 V and goes to pin 4. Black is ground and goes to pin 34. Green and white are the data lines and stay free, each one insulated.<br>**Maker's page:** https://www.adafruit.com/product/4449 |
 
 ### <a id="a13"></a>A13. MonkMakes Amplified Speaker 2
 
@@ -160,13 +160,13 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2.<br>**Connects:** Plugs into the jack of A17, direct. The wires from A16 go into its screw terminals.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
+| <img src="images/parts/a18-trrs-plug.jpg" width="200" alt="3.5 mm TRRS plug with screw terminals"> | A 3.5 mm plug whose four contacts end in screw terminals. The microphone's two audio wires, from the socket A16, are screwed in here, and the plug goes into the jack of the sound adapter A17. No soldering at this end.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** Amazon B08QFHHJ3Z. It comes in a pack of 2: **the radio uses 1**.<br>**Connects:** Plugs into the jack of A17, direct. The wires from A16 go into its screw terminals.<br>**Plug:** 3.5 mm male, 4 poles<br>**Terminals:** 4 screw terminals<br>**Length:** 32 cm |
 
 ### <a id="a19"></a>A19. Female-to-female jumper wires, 30 cm
 
 | | |
 |---|---|
-| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped.<br><br>**Quantity:** ×1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949<br>**Connects:** 12 of the 20: two for the speaker, three for each needle, two for the push-to-talk button, two from the microphone socket to A18.<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
+| <img src="images/parts/a19-jumper-wires.jpg" width="200" alt="Female-to-female jumper wires, 30 cm"> | Join the Pi's header to the speaker's pins, to the needles and to the push-to-talk wires. A socket at each end slides onto a pin, so nothing is clipped.<br><br>**Quantity:** ×1 strip of 20<br>**In version 1.0:** wired<br>**Reference:** Adafruit 1949. I have not ordered it yet.<br>**Connects:** 12 of the 20: two for the speaker, three for each needle, two for the push-to-talk button, two from the microphone socket to A18.<br>**Ends:** Female at both ends, spaced 2.54 mm<br>**Length:** 30 cm<br>**Wire:** 28 AWG, in a ribbon of 20 that peels apart<br>**Maker's page:** https://www.adafruit.com/product/1949 |
 
 ### <a id="a20"></a>A20. USB-C panel socket on a 30 cm cable
 
@@ -178,7 +178,37 @@ One sheet for each part, in the order of the list.
 
 | | |
 |---|---|
-| <img src="images/parts/a21-switch-cable.jpg" width="200" alt="USB-C cable with an on and off switch"> | The master switch: one click cuts the power of the whole radio, and a red light shows when it is on.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** The Pi Hut 102509. I have not ordered it yet.<br>**Connects:** From the cable of A20 to the Pi's USB-C port, direct.<br>**Ends:** USB-C female to USB-C male<br>**Length:** About 31 cm<br>**Switch:** Push to turn on, push again to turn off, with a red light<br>**Use:** Made for the Raspberry Pi 4 with its own power supply. It passes power only, no data.<br>**Maker's page:** https://thepihut.com/products/usb-c-cable-with-switch |
+| <img src="images/parts/a21-switch-cable.jpg" width="200" alt="USB-C cable with an on and off switch"> | The master switch: one press cuts the power of the whole radio.<br><br>**Quantity:** ×1<br>**In version 1.0:** planned<br>**Reference:** PiShop, Power Switch for Raspberry Pi 4, USB-C. I have not ordered it yet.<br>**Connects:** From the cable of A20 to the Pi's USB-C port, direct.<br>**Ends:** USB-C female, where the cable of A20 plugs in, to USB-C male, which goes into the Pi<br>**Length:** 27 cm<br>**Switch:** A button in the middle of the cable<br>**Use:** Made for the Raspberry Pi 4 with its usual supply. It passes power only, no data. It does not work with a Raspberry Pi 5.<br>**Seller's page:** https://www.pishop.ca/product/power-switch-for-raspberry-pi-4-usb-c/ |
+
+## Where I bought them, in Canada
+
+I live in Canada and bought the parts from these stores. I cannot say what is sold in your country. Where a part
+comes from a maker such as Adafruit, Raspberry Pi or MonkMakes, the maker's own page lists its sellers around the
+world.
+
+| No. | Store | Page |
+|---|---|---|
+| **A1** | PiShop | <https://www.pishop.ca/product/raspberry-pi-4-model-b-1gb/> |
+| **A2** | PiShop | <https://www.pishop.ca/product/raspberry-pi-15w-power-supply-us-black/> |
+| **A3** | Amazon.ca | <https://www.amazon.ca/dp/B08KSSXKYR> |
+| **A4** | Digi-Key | <https://www.digikey.ca/en/products/result?keywords=1528-5447-ND> |
+| **A5** | Digi-Key | <https://www.digikey.ca/en/products/result?keywords=1528-5799-ND> |
+| **A6** | Digi-Key | <https://www.digikey.ca/en/products/result?keywords=1528-5800-ND> |
+| **A7** | PiShop | <https://www.pishop.ca/product/usb-type-c-to-usb-2-0-a-male-cable-3ft/> |
+| **A8** | Amazon.ca | <https://www.amazon.ca/dp/B0DN9T9J75> |
+| **A9** | Amazon.ca | <https://www.amazon.ca/dp/B0GV1VC7PZ> |
+| **A10** | PiShop | <https://www.pishop.ca/product/breadboard-trim-potentiometer-10k/> |
+| **A11** | Amazon.ca | <https://www.amazon.ca/dp/B0F2YKGS25> |
+| **A12** | Digi-Key, not bought yet | <https://www.digikey.ca/en/products/result?keywords=adafruit%204449> |
+| **A13** | PiShop | <https://www.pishop.ca/product/amplified-speaker-2-for-raspberry-pi-arduino/> |
+| **A14** | Amazon.ca | <https://www.amazon.ca/dp/B08F2GRHXC> |
+| **A15** | Amazon.ca | <https://www.amazon.ca/dp/B008CLIB5K> |
+| **A16** | CB Radio Supply, in the United States, not bought yet | <https://cbradiosupply.com/products/cb-radio-accessories-workman-c-4p-replacement-4-pin-cb-radio-microphone-panel-jack-mount> |
+| **A17** | Amazon.ca | <https://www.amazon.ca/dp/B07RS11M1T> |
+| **A18** | Amazon.ca | <https://www.amazon.ca/dp/B08QFHHJ3Z> |
+| **A19** | Digi-Key, not bought yet | <https://www.digikey.ca/en/products/result?keywords=adafruit%201949> |
+| **A20** | Digi-Key, not bought yet | <https://www.digikey.ca/en/products/result?keywords=adafruit%204218> |
+| **A21** | PiShop, not bought yet | <https://www.pishop.ca/product/power-switch-for-raspberry-pi-4-usb-c/> |
 
 ## Where the pictures come from
 
