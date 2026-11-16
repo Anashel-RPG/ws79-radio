@@ -146,6 +146,10 @@ microphone's signal, pin 3 transmit and pin 4 receive. I read that wiring on a r
 on my own microphone. Before you connect anything, find which wire colour goes to which pin with a multimeter set to
 continuity, and plug the microphone into the socket once to check that it fits.
 
+The same wiring, step by step. W1, W2 and W3 are three wires taken from the A19 strip.
+
+![The microphone's wiring in eight steps, from finding each wire's pin to plugging the sound adapter into the Pi](images/wiring/microphone-steps.png)
+
 ### The speaker
 
 The speaker's two connections are those of version 1.0: its sound through the audio cable (A14), its power through two
@@ -157,7 +161,7 @@ A19 wires.
 
 Each meter has a lamp behind its dial, apart from its needle. The lamps need 12 V. The step-up cable (A11) makes them
 from the 5 V of pins 4 and 34, which it reaches through a USB-A socket on jumper wires (A12). The red wire of that
-socket goes to pin 4 and its black wire to pin 34. Its green and white wires stay free and insulated.
+socket goes to pin 4 and its black wire to pin 34. Its green and white wires stay free. Their sockets are covered in plastic, so nothing needs tape.
 
 ![The lamps of the two meters: pins 4 and 34, the USB-A socket on wires, the step-up cable, then the meters](images/wiring/lamps.png)
 
