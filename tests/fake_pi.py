@@ -59,6 +59,23 @@ class FakeSerial:
         self.lines.extend(done)
 
 
+class FakeLgpio(types.ModuleType):
+    """The pins of the two needles. Records each (gpio, duty in %) the program sets."""
+    def __init__(self):
+        super().__init__("lgpio")
+        self.claimed, self.duty = [], []
+
+    def gpiochip_open(self, _chip):
+        return 1
+
+    def gpio_claim_output(self, _h, gpio, _level=0):
+        self.claimed.append(gpio)
+
+    def tx_pwm(self, _h, gpio, freq, duty):
+        assert 0 <= duty <= 100 and freq > 0
+        self.duty.append((gpio, duty))
+
+
 class FastTime:
     """time, with every sleep cut short so a test does not wait."""
     def __getattr__(self, name):
@@ -77,6 +94,7 @@ def load_pi_program():
     serial = types.ModuleType("serial")
     serial.Serial = lambda *a, **k: (_ for _ in ()).throw(OSError("no serial port in tests"))
     sys.modules["evdev"], sys.modules["serial"] = evdev, serial
+    sys.modules["lgpio"] = FakeLgpio()
     spec = importlib.util.spec_from_file_location("ws79", os.path.join(REPO, "pi", "ws79.py"))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

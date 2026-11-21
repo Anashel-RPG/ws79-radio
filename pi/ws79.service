@@ -1,12 +1,12 @@
 [Unit]
-Description=WS-79 console (screen status, keypad sounds, dial volume, spectrum)
+Description=WS-79 console (screen status, keypad sounds, dial volume, spectrum, needles)
 After=sound.target network.target
 Wants=network-online.target
 
 [Service]
 User=__USER__
 Group=__USER__
-SupplementaryGroups=audio input dialout
+SupplementaryGroups=audio input dialout gpio
 WorkingDirectory=/opt/ws79
 ExecStart=/usr/bin/python3 /opt/ws79/ws79.py
 Restart=always

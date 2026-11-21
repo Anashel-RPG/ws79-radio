@@ -2,7 +2,8 @@
 """WS-79 radio: the program that runs on the Raspberry Pi.
 
 It starts with the Pi (ws79.service). It tells the bar screen what is happening, plays one sound per key of the
-keypad, uses the knob as the volume, and sends the screen the spectrum of the sound that is playing.
+keypad, uses the knob as the volume, sends the screen the spectrum of the sound that is playing, and moves the two
+needles with that sound (see "the two needles" below).
 
 The screen board listens on its USB serial port. Each message is one line of text:
 
@@ -146,34 +147,136 @@ def spectrum_of(path):
     _spectra[path] = frames
     return frames
 
-class Streamer:
-    """Sends the playing sound's spectrum to the screen, in time with the audio."""
+# ---------------------------------------------------------------- the two needles
+# Each meter is driven by a pin of the Pi through its 10 kOhm knob. The pin sends 3.3 V pulses (PWM), and the share
+# of time the pin is on sets how far the needle goes: 100 % is the end of the scale, set once with the knob.
+#   SIGNAL, the left meter, pin 16: the hiss and bite of the station, the energy between 1.5 and 6 kHz. It moves on
+#           consonants, static and tones. The volume knob does not change it. With nothing playing it trembles just
+#           above zero, like a receiver hearing only noise.
+#   AUDIO, the right meter, pin 18: how loud the sound is at the speaker. It follows the volume knob and drops to
+#           zero when the sound is muted.
+# Each sound is scaled to itself, so its quiet parts sit low on the dial and its loudest moments reach about 90 %.
+NEEDLE_SIGNAL_GPIO = 23                          # pin 16
+NEEDLE_AUDIO_GPIO = 24                           # pin 18
+NEEDLE_PWM_HZ = 500
+NEEDLE_FPS = 50                                  # needle updates a second
+NEEDLE_TOP = 0.90                                # where a sound's loudest moments put the needle
+SIGNAL_NOISE = 0.06                              # where SIGNAL trembles with no station
+SIGNAL_BAND = (1500, 6000)                       # Hz
+SIGNAL_RISE, SIGNAL_FALL = 0.55, 0.20            # share of the gap closed per update
+AUDIO_RISE, AUDIO_FALL = 0.85, 0.35
+SILENCE_DB = -55                                 # quieter than this, both needles fall to rest
+_tracks = {}
+
+def _scaled(db, quiet):
+    """Decibels to 0..1 for one sound: its 5th percentile near the bottom, its 99th at NEEDLE_TOP."""
+    live = db[~quiet] if (~quiet).any() else db
+    lo, hi = np.percentile(live, 5), np.percentile(live, 99)
+    lo = min(lo, hi - 20)                         # a steady sound stays steady instead of being stretched
+    v = 0.05 + (db - lo) / max(hi - lo, 1e-6) * (NEEDLE_TOP - 0.05)
+    v[quiet] = 0.0
+    return np.clip(v, 0.0, 1.0)
+
+def needle_tracks(path):
+    """NEEDLE_FPS values a second of (signal, audio), each 0 to 1, before any easing or volume. Computed once."""
+    if path in _tracks:
+        return _tracks[path]
+    with wave.open(path, "rb") as w:
+        rate = w.getframerate(); ch = w.getnchannels()
+        x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
+    if ch > 1:
+        x = x.reshape(-1, ch).mean(axis=1)
+    x /= 32768.0
+    hop, win = rate // NEEDLE_FPS, 2048
+    n = max(1, len(x) // hop)
+    x = np.pad(x, (0, n * hop + win - len(x)))
+    segs = x[np.arange(n)[:, None] * hop + np.arange(win)[None, :]]
+    audio_db = 20 * np.log10(np.sqrt(np.mean(segs[:, :hop] ** 2, axis=1)) + 1e-9)
+    freqs = np.fft.rfftfreq(win, 1 / rate)
+    band = (freqs >= SIGNAL_BAND[0]) & (freqs < SIGNAL_BAND[1])
+    mag = np.abs(np.fft.rfft(segs * np.hanning(win), axis=1))[:, band]
+    signal_db = 20 * np.log10(mag.mean(axis=1) + 1e-9)
+    quiet = audio_db < SILENCE_DB
+    tracks = list(zip(_scaled(signal_db, quiet).tolist(), _scaled(audio_db, quiet).tolist()))
+    _tracks[path] = tracks
+    return tracks
+
+def ease(now, target, rise, fall):
+    """One update of a needle's travel toward its target: rise when going up, fall when coming down."""
+    return now + (target - now) * (rise if target > now else fall)
+
+class Needles:
+    """The two meters. If the pins cannot be opened (no lgpio, not a Pi) the radio runs without them."""
     def __init__(self):
-        self.frames = None
+        self.signal = self.audio = 0.0
+        self.chip = None
+        try:
+            import lgpio
+            self.lgpio = lgpio
+            self.chip = lgpio.gpiochip_open(0)
+            for g in (NEEDLE_SIGNAL_GPIO, NEEDLE_AUDIO_GPIO):
+                lgpio.gpio_claim_output(self.chip, g, 0)
+        except Exception as e:
+            self.chip = None
+            print("needles off: %s" % e, file=sys.stderr)
+
+    def move(self, signal_target, audio_target):
+        self.signal = ease(self.signal, signal_target, SIGNAL_RISE, SIGNAL_FALL)
+        self.audio = ease(self.audio, audio_target, AUDIO_RISE, AUDIO_FALL)
+        if self.chip is None:
+            return
+        try:
+            for g, v in ((NEEDLE_SIGNAL_GPIO, self.signal), (NEEDLE_AUDIO_GPIO, self.audio)):
+                self.lgpio.tx_pwm(self.chip, g, NEEDLE_PWM_HZ, round(min(1.0, max(0.0, v)) * 100, 1))
+        except Exception as e:
+            print("needles: %s" % e, file=sys.stderr)
+
+class Streamer:
+    """Sends the playing sound's spectrum to the screen and moves the needles, in time with the audio."""
+    def __init__(self, needles=None, gain=lambda: 1.0):
+        self.frames = self.tracks = None
         self.t0 = 0
+        self.needles, self.gain = needles, gain
+        self.noise = SIGNAL_NOISE
         self.lock = threading.Lock()
         threading.Thread(target=self._run, daemon=True).start()
 
-    def start(self, frames):
+    def start(self, frames, tracks=None):
         with self.lock:
-            self.frames, self.t0 = frames, time.monotonic()
+            self.frames, self.tracks, self.t0 = frames, tracks, time.monotonic()
 
     def stop(self):
         with self.lock:
-            self.frames = None
+            self.frames = self.tracks = None
         screen.send("P|" + "0" * SPEC_BARS)
 
     def _run(self):
+        sent = -1
         while True:
             with self.lock:
-                frames, t0 = self.frames, self.t0
+                frames, tracks, t0 = self.frames, self.tracks, self.t0
+            signal, audio = None, 0.0
             if frames:
-                i = int((time.monotonic() - t0) * SPEC_FPS)
+                t = time.monotonic() - t0
+                i = int(t * SPEC_FPS)
                 if i >= len(frames):
                     self.stop()
+                    sent = -1
                 else:
-                    screen.send("P|" + frames[i])
-            time.sleep(1 / SPEC_FPS)
+                    if i != sent:                   # the screen gets SPEC_FPS frames a second
+                        screen.send("P|" + frames[i])
+                        sent = i
+                    k = int(t * NEEDLE_FPS)
+                    if tracks and k < len(tracks):
+                        signal, audio = tracks[k][0], tracks[k][1] * self.gain()
+            else:
+                sent = -1
+            if signal is None:                    # no station: a small tremble of noise
+                self.noise = min(2 * SIGNAL_NOISE, max(0.0, self.noise + np.random.uniform(-0.006, 0.006)))
+                signal = self.noise
+            if self.needles:
+                self.needles.move(max(signal, SIGNAL_NOISE) if frames else signal, audio)
+            time.sleep(1 / NEEDLE_FPS)
 
 # ---------------------------------------------------------------- the program
 def main():
@@ -203,12 +306,13 @@ def main():
     voice = pygame.mixer.Channel(1)                  # service stops as soon as it is asked to
 
     # Load and analyse every sound once, so a key press never waits on the card.
-    sounds, spectra = {}, {}
+    sounds, spectra, tracks = {}, {}, {}
     for n, (_freq, _label, name) in CHANNELS.items():
         path = os.path.join(SOUNDS, name)
         try:
             sounds[n] = pygame.mixer.Sound(path)
             spectra[n] = spectrum_of(path)
+            tracks[n] = needle_tracks(path)
         except Exception as e:
             print("sound %s: %s" % (name, e), file=sys.stderr)
     time.sleep(max(0.0, 2.5 - (time.monotonic() - shown)))     # leave the network line on screen long enough to read
@@ -228,11 +332,13 @@ def main():
     for d in devs:
         sel.register(d, selectors.EVENT_READ)
 
-    spec = Streamer()
     level, muted = 1.0, False
+    gain = [1.0]                                  # what the AUDIO needle multiplies by: the volume, 0 when muted
+    spec = Streamer(Needles(), lambda: gain[0])
     playing = None                                # the key whose sound is playing
 
     def show_volume():
+        gain[0] = 0 if muted else level
         voice.set_volume(0 if muted else level)
         screen.send("V|%d" % (0 if muted else round(level * 100)))
 
@@ -260,7 +366,7 @@ def main():
                     if n in sounds:
                         voice.play(sounds[n])
                         playing = n
-                        spec.start(spectra[n])
+                        spec.start(spectra[n], tracks.get(n))
                     else:
                         playing = None
                         screen.send("S|SOUND ERROR %s" % name)

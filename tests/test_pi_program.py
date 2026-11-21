@@ -23,6 +23,7 @@ class PiProgram(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.ws79 = fake_pi.load_pi_program()
+        cls.pins = sys.modules["lgpio"]
         script = [
             press(ecodes.KEY_F18),                 # key 1: Stinger OS
             press(ecodes.KEY_F18, wait=0.35),      # key 1 again: stop
@@ -73,6 +74,64 @@ class PiProgram(unittest.TestCase):
         for n, (_freq, _label, name) in self.ws79.CHANNELS.items():
             frames = self.ws79.spectrum_of(os.path.join(self.ws79.SOUNDS, name))
             self.assertGreater(len(frames), 20, name)
+
+    def test_needle_tracks_follow_each_sound(self):
+        for n, (_freq, _label, name) in self.ws79.CHANNELS.items():
+            path = os.path.join(self.ws79.SOUNDS, name)
+            tracks = self.ws79.needle_tracks(path)
+            seconds = len(self.ws79.spectrum_of(path)) / self.ws79.SPEC_FPS
+            self.assertLess(abs(len(tracks) / self.ws79.NEEDLE_FPS - seconds), 0.5, name + ": as long as the spectrum")
+            for signal, audio in tracks:
+                self.assertTrue(0 <= signal <= 1 and 0 <= audio <= 1, name)
+            signal = sorted(s for s, _a in tracks)
+            self.assertLess(signal[len(signal) // 2], 0.85, name + ": SIGNAL should not sit at the end of the dial")
+            self.assertGreater(signal[-1] - signal[len(signal) // 10], 0.3, name + ": SIGNAL should travel")
+            self.assertLessEqual(max(a for _s, a in tracks), 1.0, name)
+
+    def test_both_needles_are_driven(self):
+        pins = self.pins
+        self.assertEqual(pins.claimed, [23, 24])
+        signal = [d for g, d in pins.duty if g == 23]
+        audio = [d for g, d in pins.duty if g == 24]
+        self.assertGreater(max(signal), 20, "SIGNAL should rise while a station plays")
+        self.assertGreater(max(audio), 20, "AUDIO should rise while a station plays")
+        self.assertNotEqual(signal, audio, "the two needles should not move together")
+
+
+@unittest.skipUnless(HAVE, "needs numpy and pygame")
+class NeedleTravel(unittest.TestCase):
+    def setUp(self):
+        self.ws79 = fake_pi.load_pi_program()
+
+    def test_signal_rises_slower_and_falls_slower_than_audio(self):
+        w = self.ws79
+        s = a = 0.0
+        for _ in range(3):
+            s, a = w.ease(s, 1, w.SIGNAL_RISE, w.SIGNAL_FALL), w.ease(a, 1, w.AUDIO_RISE, w.AUDIO_FALL)
+        self.assertLess(s, a)
+        s = a = 1.0
+        for _ in range(3):
+            s, a = w.ease(s, 0, w.SIGNAL_RISE, w.SIGNAL_FALL), w.ease(a, 0, w.AUDIO_RISE, w.AUDIO_FALL)
+        self.assertGreater(s, a)
+
+    def test_mute_drops_audio_and_keeps_signal(self):
+        w = self.ws79
+        needles = w.Needles()
+        for _ in range(40):
+            needles.move(0.8, 0.8 * 0)              # muted: the gain is 0
+        self.assertLess(needles.audio, 0.01)
+        self.assertGreater(needles.signal, 0.7)
+
+    def test_runs_without_the_pins(self):
+        w = self.ws79
+        saved = sys.modules.pop("lgpio")
+        sys.modules["lgpio"] = None                 # import fails, as on a computer
+        try:
+            needles = w.Needles()
+            needles.move(1, 1)
+            self.assertIsNone(needles.chip)
+        finally:
+            sys.modules["lgpio"] = saved
 
 
 @unittest.skipUnless(HAVE, "needs numpy and pygame")

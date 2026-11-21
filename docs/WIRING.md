@@ -4,7 +4,7 @@ This guide has two parts. The first is the bench build of version 1.0: seven con
 second is the plan for the whole radio, with its meters, its microphone and its second screen. I have built and tested
 the first part. The second part is a design that I have not built yet.
 
-The drawings and the tables name each part by its label in [the parts list](PARTS-BOM.md), from A1 to A22.
+The drawings and the tables name each part by its label in [the parts list](PARTS-BOM.md), from A1 to A23.
 
 ## How the parts connect
 
@@ -109,14 +109,15 @@ on the right.
 | 2 (5 V) and 6 (ground) | The speaker's power | Wired |
 | 4 (5 V) and 34 (ground) | The meters' lamps, through the USB-A socket on wires and the 5 V to 12 V cable | Planned |
 | 11 (GPIO 17) | The microphone's push-to-talk button. Its ground comes through the sound adapter. | Planned |
-| 16 (GPIO 23) and 14 (ground) | The SIGNAL needle, the left meter | Planned |
-| 18 (GPIO 24) and 20 (ground) | The AUDIO needle, the right meter | Planned |
+| 16 (GPIO 23) and 14 (ground) | The SIGNAL needle, the left meter | Wired |
+| 18 (GPIO 24) and 20 (ground) | The AUDIO needle, the right meter | Wired |
 
-Version 1.0 uses pins 2 and 6 only. No program drives the other pins yet.
+The bench build uses pins 2 and 6 for the speaker and pins 14, 16, 18 and 20 for the two needles. No program drives
+the other pins yet.
 
 ## The plan for the whole radio
 
-**This part is a design. I have not wired or tested any of it.** It is here so the case, the parts list and the
+**This part is a design, except the two needles, which I have wired and tested.** It is here so the case, the parts list and the
 programs to come stay in step, and so anyone who builds ahead of me knows what I intend.
 
 ### The two needles
@@ -129,8 +130,42 @@ needle reaches the end of its scale.
 ![Each needle: a pin of the Pi, a potentiometer, a meter and its ground](images/wiring/needles.png)
 
 Each needle takes three A19 wires: pin to potentiometer, potentiometer to the meter's + terminal, and the meter's −
-terminal back to a ground pin. The potentiometer's pins take the wires' sockets directly. I have not checked how a
-wire holds on the meter's terminals. If they are screws, cut one end of the wire, strip it and hold it under the nut.
+terminal back to a ground pin. The potentiometer's pins take the wires' sockets directly.
+
+I have built and tested the two needles. Each meter comes with a small green driver board (HH45) held on its back by
+the meter's two screws, marked + and −. The needle's wires go under those two screws. Loosen a screw one or two
+turns, but do not take it out, because it holds the board. Cut the socket off one end of an A19 wire, strip about
+1 cm, twist the strands, wrap them clockwise under the washer and tighten. The board's four holes, marked IN meter
+and AC/DC 6V-12V, are not used by the needles.
+
+### The potentiometer's three pins
+
+The potentiometer has three pins. Two of them are the ends of the 10 kΩ track, and one is the wiper, the contact the
+knob moves. Sellers ship two shapes. On one, the pins make a triangle: two sit in a row and the third sits alone, and
+the lone pin is the wiper. On the other, the three pins sit in one row, and the middle pin is the wiper.
+
+![The knob's three pins, in a triangle or in a row: the Pi's wire on an end pin, the meter's wire on the wiper](images/wiring/knob.svg)
+
+1. Put the Pi's wire on an end pin: one of the two pins in the row on a triangle, an outer pin on a row of three.
+   The other end pin stays empty.
+2. Put the wire from the meter's + screw on the wiper: the lone pin on a triangle, the middle pin on a row of three.
+3. Turn the knob to the end where the needle rises least. Drive the pin fully on, then turn the knob until the needle
+   just touches the end mark. You set it once.
+
+To drive a pin fully on by hand, run `pinctrl set 23 op dh` on the Pi for the left needle or `pinctrl set 24 op dh`
+for the right one, and `dl` in place of `dh` to drop it. Stop the radio's program first with
+`sudo systemctl stop ws79`, because it drives the same pins.
+
+### What each needle shows
+
+The program drives each pin with fast pulses, 500 a second, and the share of time the pin is on sets the needle. It
+sets both needles 50 times a second. Each sound is scaled to itself: its quiet parts sit low on the dial and its
+loudest moments reach about 90 % of the scale. The two needles read different parts of the same sound.
+
+| Needle | Pin | What it follows | How it moves |
+|---|---|---|---|
+| SIGNAL, left | 16 (GPIO 23) | The hiss and bite of the station: the sound between 1.5 and 6 kHz | Moves on consonants, static and tones. The volume knob does not change it. With nothing playing it trembles just above zero. |
+| AUDIO, right | 18 (GPIO 24) | The loudness at the speaker | Moves with each word and beat. It follows the volume knob and drops to zero on mute. |
 
 ### The microphone and its push-to-talk button
 
@@ -186,7 +221,8 @@ The two displays sit end to end behind the window, with their ribbons pointing o
 | From | To | Through |
 |---|---|---|
 | The power supply (A2) | The socket on the back of the case (A20) | The supply's own cable |
-| The socket on the back | The switch cable (A21), then the Pi's USB-C port | The socket's own 30 cm cable |
+| The socket on the back | The switch cable (A21), then the splitter (A23), then the Pi's USB-C port | The socket's own 30 cm cable |
+| A PC, optional | The second socket on the back (A20), then the splitter's DATA ONLY side (A23) | The PC's USB-C cable |
 | The Pi, a USB-A port | The keypad | A USB-A to USB-C cable (A7) |
 | The Pi, a USB-A port | The sound adapter, then the TRRS plug | The adapter's cable (A17), then the plug (A18) |
 | The Pi, a USB-A port | A Qualia board, then the left display | A USB-A to USB-C cable (A7), then the ribbon |
@@ -202,22 +238,24 @@ The two displays sit end to end behind the window, with their ribbons pointing o
 
 ### Power
 
-One cable powers the whole radio: the cable of the power supply (A2). Nothing else leaves the case.
+One cable powers the whole radio: the cable of the power supply (A2). A second cable, to a PC, is optional and carries
+data only.
 
 | Step | Part | What happens |
 |---|---|---|
 | 1 | The power supply (A2) | 5.1 V and 3 A from the wall |
 | 2 | The socket on the back (A20) | The supply plugs in from outside. The socket's 30 cm cable takes the power inside. |
-| 3 | The switch cable (A21) | One press of its button turns the whole radio on or off. |
-| 4 | The Pi (A1) | It takes the power on its USB-C port and passes it on to every other part |
-| 5 | The Pi's four USB-A ports | The two Qualia boards with their displays, the keypad and the sound adapter |
-| 6 | The Pi's header, pins 2 and 6 | The speaker |
-| 7 | The Pi's header, pins 4 and 34 | The step-up cable, through the USB-A socket on wires, then the meters' lamps at 12 V |
+| 3 | The switch cable (A21) | One flip of its rocker turns the whole radio on or off. |
+| 4 | The splitter (A23) | It passes the power to the Pi's USB-C port, and keeps it apart from the PC's data |
+| 5 | The Pi (A1) | It takes the power on its USB-C port and passes it on to every other part |
+| 6 | The Pi's four USB-A ports | The two Qualia boards with their displays, the keypad and the sound adapter |
+| 7 | The Pi's header, pins 2 and 6 | The speaker |
+| 8 | The Pi's header, pins 4 and 34 | The step-up cable, through the USB-A socket on wires, then the meters' lamps at 12 V |
 
 The switch cable can sit in two places. On the supply's cable, outside the case, it works without any change to the
-case. Inside the case, between the socket and the Pi, its button has to reach the back through a hole, and the case
-has no hole or holder for it yet. The case has no hole for the socket either: it needs a round hole of 21.5 to 27 mm in
-the back. [The case](../print/README.md#what-is-not-drawn-yet) lists both.
+case. Inside the case, between the socket and the splitter, its rocker has to reach the back through a slot, and the
+case has no slot or holder for it yet. The case has no holes for the two sockets either: each needs a round hole of 21.5 to 27 mm
+in the back. [The case](../print/README.md#what-is-not-drawn-yet) lists both.
 
 The supply gives 3 A. Two figures say how that splits. The two lamps draw about 110 mA at 12 V, going by their driver
 boards. A Pi 4 gives its four USB-A ports 1.2 A in all, going by Raspberry Pi's hardware documentation. Taking the

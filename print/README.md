@@ -94,8 +94,8 @@ groups.
 
 ![The shell seen from above, from the front and from the side](images/shell-views.png)
 
-The file is the shell's outer shape. It has no opening for power yet. The plan is a round hole of 21.5 to 27 mm in
-the back for the power socket (A20), which takes the supply's cable. [WIRING.md](../docs/WIRING.md#power) shows the
+The file is the shell's outer shape. It has no opening for power yet. The plan is two round holes of 21.5 to 27 mm in
+the back for the two sockets (A20): one takes the supply's cable, the other an optional cable to a PC. [WIRING.md](../docs/WIRING.md#power) shows the
 path from that socket to the Pi.
 
 ## The sides
@@ -135,7 +135,7 @@ the two Qualia boards and of the parts on the floor are a proposal.
 | 8 | The microphone socket (A16) | Hole of 16.2 | Its nut on the face |
 | 9 | The USB sound adapter (A17) | | It hangs on its cable. A cable tie is enough. |
 | 10 | The 5 V to 12 V cable and its USB-A socket (A11 and A12) | | A place on the floor, coiled |
-| 11 | The Pi's USB-C port, fed by the switch cable (A21) | | The switch cable runs from the power socket on the back to this port |
+| 11 | The Pi's USB-C port, with the splitter (A23) plugged in | | The switch cable (A21) runs from the power socket on the back to the splitter's PWR ONLY side, and the PC socket's cable to its DATA ONLY side |
 
 The two displays sit end to end behind the window. [WIRING.md](../docs/WIRING.md) shows them to scale.
 
@@ -146,9 +146,9 @@ The two displays sit end to end behind the window. [WIRING.md](../docs/WIRING.md
 - The mounts of the keypad and of the speaker.
 - The joint between the two halves of the face, and the joint between the two halves of the shell.
 - The back as a plate of its own.
-- The round hole of 21.5 to 27 mm for the power socket (A20) in the back. The shell's print file has no opening for
-  power yet.
-- A hole and a holder for the button of the switch cable (A21), if the switch goes inside the case. On the supply's
+- The two round holes of 21.5 to 27 mm for the sockets (A20) in the back, power and PC. The shell's print file has no
+  opening for them yet.
+- A slot and a holder for the rocker of the switch cable (A21), if the switch goes inside the case. On the supply's
   cable, outside the case, it needs neither.
 - The feet. They are in the model and not in the print files.
 - The legends of the face.
@@ -157,8 +157,8 @@ The two displays sit end to end behind the window. [WIRING.md](../docs/WIRING.md
 
 Three sets of openings were measured on photos of the parts: those of the six keys and the knob with the keypad's
 pocket, those of the two meters, and the hole of the microphone socket. I have not measured the parts themselves.
-Measure your own parts against the table of the face before you print it. The 4-pin socket was not ordered when I
-drew its hole.
+Measure your own parts against the table of the face before you print it. I drew the hole of the 4-pin socket
+from its listing.
 
 ## Redrawing the plans
 

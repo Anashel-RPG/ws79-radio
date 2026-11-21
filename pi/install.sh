@@ -106,7 +106,7 @@ fi
 say "1 of 5: system packages"
 sudo apt-get update -qq
 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
-    python3-pygame python3-evdev python3-serial python3-numpy python3-venv alsa-utils curl >/dev/null
+    python3-pygame python3-evdev python3-serial python3-numpy python3-lgpio python3-venv alsa-utils curl >/dev/null
 echo "done"
 
 say "2 of 5: the radio program (/opt/ws79) and its service"
